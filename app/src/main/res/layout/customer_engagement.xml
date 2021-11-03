@@ -1,0 +1,151 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.cobi.puresurveyandroid.model.Engagement" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_10"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/keyBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="10dp"
+                android:text="Last bought: "></TextView>
+
+            <TextView
+                style="@style/valuePopup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{data.lastBought}"></TextView>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/keyBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="10dp"
+                android:text="Contact details last updated: "></TextView>
+
+            <TextView
+                style="@style/valuePopup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{data.detailsLastUpdated}"></TextView>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/keyBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="10dp"
+                android:text="Opt out: "></TextView>
+
+            <CheckBox
+                android:clickable="false"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="@{data.optOut ? true : false}"></CheckBox>
+
+
+
+
+        </LinearLayout>
+
+        <TextView
+            style="@style/keyBold"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="@dimen/margin_10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="10dp"
+            android:text="Rewards"></TextView>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/keyBold"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="10dp"
+                android:text="Rewards Customer: "></TextView>
+
+            <CheckBox
+                android:clickable="false"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="@{data.rwClientInd ? true : false}"></CheckBox>
+
+
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/keyBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="10dp"
+                android:text="Tier Level: "></TextView>
+
+            <TextView
+                style="@style/valuePopup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{data.rewardTierNew}"></TextView>
+
+        </LinearLayout>
+
+
+
+        <TextView
+            style="@style/valuePopup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="(Or potential Tier Level if not a Rewards Customer)"></TextView>
+
+
+    </LinearLayout>
+
+</layout>
+
+

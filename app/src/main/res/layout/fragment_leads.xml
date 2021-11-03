@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="error"
+            type="String" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/windowBackground">
+
+        <RelativeLayout
+            android:id="@+id/layoutMyLeads"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/textViewLogin">
+
+                <RelativeLayout
+                    android:id="@+id/layoutRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipChildren="false"
+                    android:clipToPadding="false"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/padding_2">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/campaign_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/noLeadsCard"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        app:cardElevation="2dp"
+                        tools:visibility="gone">
+
+                        <TextView
+                            style="@style/listLargeInactive"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="@dimen/padding_15"
+                            android:paddingTop="@dimen/padding_25"
+                            android:paddingRight="@dimen/padding_15"
+                            android:paddingBottom="@dimen/padding_25"
+                            android:text="@string/placeholder_no_leads" />
+
+                    </androidx.cardview.widget.CardView>
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/textViewLogin"
+                style="@style/listSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="50dp"
+                android:paddingBottom="5dp"
+                android:text="@string/placeholder_leads_login" />
+
+
+
+
+        </RelativeLayout>
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:src="@drawable/loading"
+            android:visibility="visible"
+            tools:visibility="gone" />
+
+        <TextView
+            android:id="@+id/textViewError"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_centerInParent="true"
+            android:layout_margin="@dimen/padding_16"
+            android:text="@{error}"
+            android:textColor="@color/colorEventSubTitle"
+            android:textStyle="bold"
+            android:visibility="@{error!=null}"
+            tools:visibility="gone" />
+
+
+
+    </RelativeLayout>
+</layout>

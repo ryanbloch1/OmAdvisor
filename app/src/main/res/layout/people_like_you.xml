@@ -1,0 +1,36 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="data"
+            type="com.cobi.puresurveyandroid.model.LikeYou" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_10"
+        android:orientation="vertical">
+
+
+        <TextView
+            style="@style/keyBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="10dp"
+            android:paddingBottom="@dimen/margin_10"
+            android:text="Typically have the following needs met:"></TextView>
+
+        <TextView
+            style="@style/valuePopup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{data.peopleLikeYou1 + '\n' + data.peopleLikeYou2 + '\n' + data.peopleLikeYou3 + '\n' + data.peopleLikeYou4+ '\n' + data.peopleLikeYou5}"></TextView>
+
+
+    </LinearLayout>
+
+</layout>
+
+

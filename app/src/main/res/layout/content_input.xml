@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ content_username_login.xml
+  ~ tupuca-android
+  ~
+  ~ Copyright (c) 2017 Tupuca. All rights reserved.
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="errorText"
+            type="String" />
+
+        <variable
+            name="minValue"
+            type="String" />
+
+        <variable
+            name="maxValue"
+            type="String" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_content_background"
+            android:paddingBottom="15dp">
+
+            <ImageButton
+                android:id="@+id/btn_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:layout_margin="10dp"
+                android:padding="5dp"
+                android:src="@drawable/grey_close"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/text_info"
+                style="@style/modalDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_32"
+                android:layout_marginLeft="@dimen/margin_32"
+                android:layout_marginEnd="@dimen/margin_32"
+                android:layout_marginRight="@dimen/margin_32"
+                android:text="@{String.format(@string/commission_input_description, maxValue)}"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_close"
+                tools:text="Please specify your monthly sales earnings target (up to R250 000)" />
+
+            <RelativeLayout
+                android:id="@+id/target_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_20"
+                android:layout_marginTop="@dimen/margin_30"
+                android:layout_marginRight="@dimen/margin_20"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_info">
+
+                <FrameLayout
+                    android:id="@+id/input_target_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:paddingLeft="@dimen/padding_15"
+                    android:paddingTop="@dimen/padding_5"
+                    android:paddingRight="@dimen/padding_15"
+                    android:paddingBottom="@dimen/padding_15"
+                    tools:background="@drawable/rounded_input_background">
+
+                    <EditText
+                        android:id="@+id/target_input"
+                        style="@style/modalInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_10"
+                        android:background="@null"
+                        android:hint="@string/target_commission" />
+
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/target_hint"
+                    style="@style/fieldHint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/padding_15"
+                    android:layout_marginLeft="@dimen/padding_15"
+                    android:background="#FFFFFF"
+                    android:padding="@dimen/padding_2"
+                    android:text="@string/target_commission" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/text_error"
+                style="@style/modalError"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_40"
+                android:layout_marginTop="@dimen/margin_2"
+                android:text='@{errorText != null ? errorText : ""}'
+                android:visibility="@{errorText != null}"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/target_container"
+                tools:text="Min sales earning R 20, Max R 250 000" />
+
+            <TextView
+                android:id="@+id/btn_save"
+                style="@style/accentTextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_34"
+                android:clickable="true"
+                android:drawableEnd="@drawable/arrow_on_button"
+                android:drawableRight="@drawable/arrow_on_button"
+                android:enabled="false"
+                android:focusable="true"
+                android:text="@string/save_btn"
+                android:textAlignment="center"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/target_container" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+</layout>

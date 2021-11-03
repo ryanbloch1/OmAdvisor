@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/windowBackground">
+
+        <RelativeLayout
+            android:id="@+id/content_sales_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/margin_15"
+            android:paddingTop="@dimen/padding_16"
+            android:paddingRight="@dimen/margin_15">
+
+            <TextView
+                android:id="@+id/textViewEventTitle"
+                style="@style/titleBlackMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/placeholder_nps" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/content_sales_title"
+            android:layout_margin="@dimen/margin_25"
+            android:background="@drawable/gradient_button_background">
+
+            <TextView
+                style="@style/subTitleWhite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:padding="@dimen/padding_5"
+                android:text="@string/placeholder_coming_soon" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</layout>

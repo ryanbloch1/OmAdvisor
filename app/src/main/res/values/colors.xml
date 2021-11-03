@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#ffffff</color>
+    <color name="colorPrimaryDark">#009677</color>
+    <color name="colorSectionBackground">#d0d0d0</color>
+    <color name="colorAccent">#009677</color>
+    <color name="colorError">#FF1616</color>
+    <color name="colorSecondaryDark">#045a4d</color>
+
+    <color name="windowBackground">#FFFFFF</color>
+    <color name="dividerColor">#000</color>
+
+    <color name="textColour">#272727</color>
+    <color name="secondaryTextColour">#9b9b9b</color>
+    <color name="disabledTextColour">#40ffffff</color>
+    <color name="enabledTextColour">#FFFFFF</color>
+
+    <color name="disabledContent">#d0d0d0</color>
+
+    <color name="bottomNavigationBackground">#ffffff</color>
+    <color name="bottomNavigationSelected">#8dc63f</color>
+    <color name="bottomNavigationSelectedFaded">#248dc63f</color>
+    <color name="bottomNavigationUnSelected">#d0d0d0</color>
+
+    <color name="navigationDrawerBackground">#272727</color>
+
+    <color name="indicatorUnselected">#e2e2e2</color>
+    <color name="graphStart">#009976</color>
+    <color name="graphEnd">#8ec640</color>
+    <color name="graphEmpty">#24000000</color>
+
+    <color name="colorEventSubTitle">#a9a9a9</color>
+    <color name="colorEventSubText">#c4c4c4</color>
+    <color name="colorLeads">#006c60</color>
+    <color name="recorder_bg">#F4511E</color>
+    <color name="divider_colour">#f2f2f2</color>
+
+    <color name="inbox_date_background">#cfcfcf</color>
+    <color name="inbox_read_background">#f6f6f6</color>
+    <color name="inbox_message">#c7c7cc</color>
+    <color name="inbox_read_date">#c7c7cc</color>
+    <color name="inbox_unread_date">#009677</color>
+    <color name="inbox_title">#4a4a4a</color>
+
+    <color name="message_incoming_box">#272727</color>
+    <color name="message_incoming_date">#c7c7cc</color>
+    <color name="message_outgoing_box">#ebebeb</color>
+    <color name="message_outgoing_date">#009677</color>
+    <color name="event_grey">#F3F5F7</color>
+
+    <!-- SPLASH -->
+    <color name="splashStart">#009976</color>
+    <color name="splashEnd">#8ec640</color>
+
+    <!--matrix-screen-->
+    <color name="light_grey">#E5E5E5</color>
+    <color name="matrix_item_background_color">#019976</color>
+
+
+    <!--events app colors-->
+    <color name="pink">#ec0580</color>
+    <color name="skyBlue">#0099CB</color>
+    <color name="lightBlue">#0c9dcd</color>
+    <color name="lightGrey">#DCDDDE</color>
+    <color name="graphiteBlack">#272727</color>
+    <color name="darkGrey">#1f1f1f</color>
+    <color name="mediumGrey">#9b9b9b</color>
+    <color name="mediumGreyTrans">#999b9b9b</color>
+    <color name="aqua">#009677</color>
+    <color name="limeGreen">#8dc63f</color>
+    <color name="black">#272727</color>
+    <color name="white">#ffffff</color>
+    <color name="mediumLightGrey">#d0d0d0</color>
+    <color name="mediumLightGrey2">#CCCCCC</color>
+    <color name="orange">#ff8000</color>
+    <color name="test">#FAFAFA</color>
+    <color name="forestGreen">#6ac222</color>
+    <color name="yellow">#F8C610</color>
+    <color name="red">#EE1812</color>
+    <color name="customOrange">#F37021</color>
+    <color name="test2">#9d0561</color>
+    <color name="fadedBlack">#666666</color>
+    <color name="formFieldColor">#E1E1E1</color>
+    <color name="pageBackgroundGrey">#F0F0F0</color>
+
+
+</resources>

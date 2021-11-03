@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.text.TextUtils"/>
+
+        <variable
+            name="item"
+            type="com.cobi.puresurveyandroid.model.MatrixItem"/>
+    </data>
+
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_30"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:layout_width="95dp"
+            android:layout_height="95dp"
+            android:background="@{item.active ? @drawable/matrix_item_background : @drawable/disabled_matrix_item_background}"
+            tools:background="@drawable/matrix_item_background">
+
+            <ImageView
+                android:id="@+id/icon"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="20dp"
+                app:pageImage="@{item.iconUrl}" />
+
+            <TextView
+                android:id="@+id/badge_count"
+                style="@style/badgeCounter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:background="@drawable/badge_background"
+                android:padding="@dimen/padding_15"
+                android:text="@{String.valueOf(item.badgeCount)}"
+                android:visibility="gone"
+                tools:text="1" />
+
+
+        </RelativeLayout>
+
+
+        <TextView
+            style="@style/dashboardTitle"
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:layout_below="@+id/icon"
+            android:textColor="#045A4D"
+            android:textStyle="bold"
+            android:textSize="11dp"
+            android:gravity="center_horizontal"
+            android:text="@{item.title}"
+            tools:text="Title"/>
+
+    </LinearLayout>
+
+</layout>

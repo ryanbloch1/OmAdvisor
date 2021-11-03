@@ -1,0 +1,115 @@
+<layout>
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.cobi.puresurveyandroid.model.OmpReqStrings" />
+
+        <import type="android.text.Html" />
+
+
+
+    </data>
+
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+
+        <LinearLayout
+            android:paddingTop="50dp"
+            android:layout_below="@+id/close"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+           >
+            <TextView
+                android:layout_marginBottom="15dp"
+                android:text="@{data.top}"
+                android:id="@+id/topSec"
+                style="@style/sectionTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/layoutCustomerRow"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_marginBottom="@dimen/margin_10"
+                android:background="@color/divider_colour" />
+
+
+            <TextView
+                android:text="Outstanding Requirements:\n\nOutstanding documents required"
+                style="@style/sectionTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+
+                />
+
+            <TextView
+                android:text="@{data.middle}"
+                android:id="@+id/middleSec"
+                style="@style/sectionValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/layoutCustomerRow"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_marginBottom="@dimen/margin_10"
+                android:background="@color/divider_colour" />
+
+
+            <TextView
+                android:text="Outstanding Underwriting\nRequirements"
+                style="@style/sectionTitle"
+                android:layout_marginBottom="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+
+            <TextView
+                android:text="@{data.end}"
+                android:id="@+id/endSec"
+                style="@style/sectionValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:visibility="gone"
+                android:text="So sorry! We have encountered a technical error. Please try again later."
+                android:id="@+id/error"
+                android:textColor="@color/red"
+                style="@style/sectionValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+
+        </LinearLayout>
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:src="@drawable/loading"
+            android:visibility="gone"
+             />
+
+
+    </RelativeLayout>
+
+
+    </layout>

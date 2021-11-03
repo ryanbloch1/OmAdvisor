@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="showButton"
+            type="Boolean" />
+
+        <variable
+            name="info"
+            type="com.cobi.puresurveyandroid.model.OnboardingInfo" />
+
+    </data>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/padding_20">
+
+            <ImageView
+                android:id="@+id/page_image"
+                style="@style/onboardingImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:roundedCornersImage="@{info.imageUrl}" />
+
+            <com.cobi.puresurveyandroid.view.AutoSizeTextView
+                android:id="@+id/page_title"
+                style="@style/onboardingTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{info.heading}"
+                tools:ignore="EllipsizeMaxLines"
+                tools:text="Keep informed" />
+
+            <com.cobi.puresurveyandroid.view.AutoSizeTextView
+                android:id="@+id/page_description"
+                style="@style/onboardingDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@{info.body}"
+                tools:text="See a summary of your leads, client, and lapses so you can take action." />
+
+            <View android:id="@+id/spacer"
+                android:layout_height="50dp"
+                android:layout_width="1dp"
+                android:visibility="@{showButton}"/>
+        </LinearLayout>
+
+    </ScrollView>
+    <TextView
+        android:id="@+id/btn_get_started"
+        style="@style/accentTextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:clickable="true"
+        android:drawableEnd="@drawable/arrow_on_button"
+        android:drawableRight="@drawable/arrow_on_button"
+        android:elevation="2dp"
+        android:focusable="true"
+        android:onClick="onGetStarted"
+        android:text="@string/proceed_to_login"
+        android:visibility="@{showButton}"
+        tools:visibility="visible" />
+</RelativeLayout>
+</layout>

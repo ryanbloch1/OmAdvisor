@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:gravity="center"
+                  android:orientation="vertical"
+                  android:paddingTop="20dp">
+
+        <include layout="@layout/qr_scan" />
+
+        <TextView
+            style="@style/bodyCopy2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:gravity="center_horizontal"
+            android:textAlignment="center"
+            android:layout_weight="1"
+            android:text="Scan QR code at Old Mutual Information Desk" />
+
+        <Button
+            android:id="@+id/qr_button"
+            style="@style/accentTextButtonEvents"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableRight="@drawable/arrow_on_button"
+            android:padding="20dp"
+            android:text="Scan qr code" />
+    </LinearLayout>
+</layout>
+
+
+
+
+
+

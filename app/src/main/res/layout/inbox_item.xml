@@ -1,0 +1,127 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout
+        android:id="@id/dialogRootLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@id/dialogContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.stfalcon.chatkit.utils.ShapeImageView
+                android:id="@id/dialogAvatar"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="0dp" />
+
+            <TextView
+                android:id="@+id/dialogUsername"
+                style="@style/inboxTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_20"
+                android:layout_marginLeft="@dimen/margin_20"
+                android:layout_marginTop="@dimen/margin_12"
+                android:ellipsize="end"
+                android:fontFamily="sans-serif"
+                android:maxLines="1"
+                tools:text="MD" />
+
+            <TextView
+                android:id="@+id/dialogName"
+                style="@style/inboxSubject"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/dialogUsername"
+                android:layout_marginStart="@dimen/margin_20"
+                android:layout_marginLeft="@dimen/margin_20"
+                android:layout_marginTop="@dimen/margin_2"
+                android:ellipsize="end"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                tools:text="Subject Line 1" />
+
+            <TextView
+                android:id="@id/dialogDate"
+                style="@style/inboxDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="@dimen/margin_14"
+                android:layout_marginEnd="@dimen/margin_12"
+                android:layout_marginRight="@dimen/margin_12"
+                android:ellipsize="end"
+                android:maxLines="1"
+                tools:text="12:08pm" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/dialogName"
+                android:layout_marginStart="@dimen/margin_20"
+                android:layout_marginLeft="@dimen/margin_20"
+                android:layout_marginTop="@dimen/margin_1"
+                android:layout_marginEnd="@dimen/margin_110"
+                android:layout_marginRight="@dimen/margin_110"
+                android:layout_marginBottom="@dimen/margin_10">
+
+                <ImageView
+                    android:id="@id/dialogLastMessageUserAvatar"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp" />
+
+                <TextView
+                    android:id="@id/dialogLastMessage"
+                    style="@style/inbox_message"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    tools:text="So this is pretty great, even th" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@id/dialogUnreadBubble"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_alignTop="@id/dialogAvatar"
+                android:layout_alignEnd="@id/dialogAvatar"
+                android:layout_alignRight="@id/dialogAvatar"
+                android:layout_marginTop="-5dp"
+                android:layout_marginEnd="-5dp"
+                android:layout_marginRight="-5dp"
+                android:background="@drawable/bubble_circle"
+                android:ellipsize="end"
+                android:fontFamily="@string/font_fontFamily_medium"
+                android:gravity="center"
+                android:lines="1" />
+
+            <FrameLayout
+                android:id="@id/dialogDividerContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="16dp"
+                android:paddingStart="@dimen/dialog_divider_margin_left"
+                android:paddingLeft="@dimen/dialog_divider_margin_left">
+
+                <View
+                    android:id="@id/dialogDivider"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/dialog_divider" />
+
+            </FrameLayout>
+
+        </RelativeLayout>
+
+    </FrameLayout>
+
+</layout>

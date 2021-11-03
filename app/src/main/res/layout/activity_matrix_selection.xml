@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:context=".activity.MatrixSelectionActivity"
+        tools:openDrawer="right">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@color/light_grey"
+                android:fitsSystemWindows="true">
+
+                <include
+                    android:id="@+id/toolbar_include"
+                    layout="@layout/action_bar_logout" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_50"
+                    android:layout_marginLeft="@dimen/margin_50"
+                    android:layout_marginTop="-4dp"
+                    android:elevation="3dp"
+                    android:src="@drawable/logo_top_nav" />
+
+                <RelativeLayout
+                    android:id="@+id/home"
+                    android:layout_below="@+id/toolbar_include"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:id="@+id/banner"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:background="@drawable/layer6"
+                        android:orientation="vertical"
+                        android:paddingLeft="50dp"
+                        android:paddingTop="35dp">
+                        <TextView
+                            android:id="@+id/text1"
+                            style="@style/topTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Dashboard"
+                            android:textColor="@color/white"
+                            android:textSize="25dp" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/welcome_box"
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/banner"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="-30dp"
+                        android:layout_marginRight="30dp"
+                        android:background="@color/matrix_item_background_color"
+                        android:gravity="center_vertical"
+                        android:minHeight="60dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="20dp"
+                        android:text="@{ client_name == null ? @string/welcome : @string/welcome+ ' ' + client_name}"
+                        android:textColor="@color/white"
+                        tools:text="djkfhjkdfhjkfhjkdfhjkdfh" />
+
+                    <LinearLayout
+
+                        android:id="@+id/Matrix"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/welcome_box"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:id="@+id/layoutMatrix"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:visibility="@{!visible}">
+
+                            <GridView
+                                android:id="@+id/matrix"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentTop="true"
+                                android:background="@color/light_grey"
+                                android:clipToPadding="false"
+                                android:gravity="center"
+                                android:horizontalSpacing="10dp"
+                                android:numColumns="3"
+                                android:padding="20dp"
+                                android:paddingTop="50dp"
+                                android:scrollbars="none"
+                                android:verticalSpacing="10dp" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/layoutNoItem"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:visibility="@{visible}"
+                            tools:visibility="gone">
+
+                            <TextView
+                                style="@style/listSmall"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_above="@+id/btnRetry"
+                                android:layout_centerHorizontal="true"
+                                android:layout_margin="@dimen/margin_10"
+                                android:gravity="center_horizontal"
+                                android:text="@string/no_options_available"
+                                android:textAllCaps="true" />
+
+                            <TextView
+                                android:id="@+id/btnRetry"
+                                style="@style/accentTextButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_gravity="center_horizontal"
+                                android:clickable="true"
+                                android:elevation="2dp"
+                                android:focusable="true"
+                                android:text="@string/retry_button" />
+
+                        </RelativeLayout>
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <FrameLayout
+                    android:id="@+id/fragment_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingTop="50dp"
+                    android:visibility="gone" />
+
+                <pl.droidsonroids.gif.GifImageView
+                    android:id="@+id/progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/loading"
+                    android:visibility="gone"
+                    tools:visibility="gone" />
+
+            </RelativeLayout>
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottom_navigation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:itemBackground="@color/bottomNavigationBackground"
+                app:itemIconTint="@drawable/bottom_navigation_states"
+                android:background="@color/white"
+                app:itemTextColor="@drawable/bottom_navigation_states"
+                app:labelVisibilityMode="labeled"
+                app:menu="@menu/navigation_matrix" />
+        </LinearLayout>
+
+        <!-- Navigation Drawer List -->
+        <include layout="@layout/content_navigation_list" />
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+    <data>
+
+        <variable
+            name="visible"
+            type="boolean" />
+
+        <variable
+            name="client_name"
+            type="String"/>
+    </data>
+</layout>

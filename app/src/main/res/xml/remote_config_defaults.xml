@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?><!-- START xml_defaults -->
+<defaultsMap>
+    <entry>
+        <key>sales_commission_target_maximum</key>
+        <value>900000</value>
+    </entry>
+    <entry>
+        <key>sales_commission_target_minimum</key>
+        <value>0</value>
+    </entry>
+    <entry>
+        <key>feature_deep_link_activation</key>
+        <value>false</value>
+    </entry>
+    <entry>
+        <key>terms_and_conditions</key>
+        <value>https://om-imed.firebaseapp.com/imed_terms_and_conditions.html</value>
+    </entry>
+</defaultsMap><!-- END xml_defaults -->

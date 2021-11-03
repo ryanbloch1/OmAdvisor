@@ -1,0 +1,39 @@
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="data"
+            type="String" />
+    </data>
+
+    <LinearLayout
+
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <TextView
+            android:layout_gravity="center_vertical"
+            tools:text="rlrljtlrkj"
+            android:layout_weight="1"
+            android:text='@{data}'
+            android:fontFamily="@font/montserrat_medium"
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/dark_green_right_arrow">
+
+        </ImageView>
+
+
+    </LinearLayout>
+
+</layout>
+

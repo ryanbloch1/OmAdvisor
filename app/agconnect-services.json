@@ -1,0 +1,14 @@
+{
+	"client":{
+		"appType":"1",
+		"cp_id":"2640027000002250380",
+		"product_id":"736430079244741294",
+		"client_id":"517390489771574464",
+		"client_secret":"8E978DE4F34063F6B590FB22DF829B700D60D78C3C240B14E2083241E9C503E8",
+		"project_id":"736430079244741294",
+		"app_id":"103486955",
+		"api_key":"CgB6e3x9cZSePfGyMhtY5ab55xAt74HyLbrNPuCYriiubNgV6xSblpr6VhOi2f4sxaQ/MRguwRm1rTBJuEP/zW43",
+		"package_name":"com.oldmutual.imed.staging"
+	},
+	"configuration_version":"1.0"
+}

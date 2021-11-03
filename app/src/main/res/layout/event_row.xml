@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="data"
+            type="com.cobi.puresurveyandroid.model.Event" />
+
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginBottom="30dp"
+                  android:orientation="vertical">
+
+        <TextView
+            style="@style/MontserratRegular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp"
+            android:text="@{data.isLive() ? `` : data.formattedDateTime}"
+            android:visibility="@{data.isLive() ? View.GONE : View.VISIBLE}"
+            tools:text="Thursday, 15 June 2019" />
+
+        <LinearLayout
+            android:id="@+id/event_banner"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/event_pic"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:scaleType="centerCrop" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@{data.isLive() ? @color/aqua : @color/event_grey}"
+                android:orientation="vertical"
+                android:paddingLeft="20dp"
+                android:paddingTop="5dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="5dp">
+
+                <TextView
+                    style="@style/MontserratMedium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="8dp"
+                    android:text="@{data.title}"
+                    android:textColor="@{data.isLive() ? @color/white : @color/black}"
+                    tools:text="World Cup Games" />
+
+                <TextView
+                    style="@style/MontserratRegular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@{data.isLive() ? @color/white : @color/black}"
+                    android:textSize="15sp"
+                    app:date="@{data.dateFrom}"
+                    tools:text="13 June 2019" />
+
+                <TextView
+                    style="@style/MontserratRegular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{data.location}"
+                    android:textColor="@{data.isLive() ? @color/white : @color/black}"
+                    android:textSize="15sp"
+                    tools:text="Mutual Place, Pinelands, Cape Town" />
+
+                <TextView
+                    style="@style/MontserratRegular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@{data.isLive() ? @color/white : @color/black}"
+                    android:textSize="15sp"
+                    app:end="@{data.dateTo}"
+                    app:start="@{data.dateFrom}"
+                    tools:text="2:20 PM - 14:15 PM" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:cardBackgroundColor="@color/lightGrey"
+                    app:cardCornerRadius="10dp">
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/check_in"
+            style="@style/MontserratRegular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:eventButton="@{data}"
+            android:background="@{data.isLive() &amp; !data.hasCheckedOut &amp; data.registrationStatus == 1 || data.registrationStatus == 2 ? @color/limeGreen : @color/lightGrey }"
+            android:drawableRight="@drawable/arrow_on_button"
+            android:padding="20dp"
+            android:textColor="@{data.isLive() &amp; !data.hasCheckedOut &amp; data.registrationStatus == 1 || data.registrationStatus == 2 ? @color/white : @color/black}"
+            android:textSize="14sp"
+            tools:text="Check in" />
+
+    </LinearLayout>
+
+</layout>

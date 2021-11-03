@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="support_email_address">support@puresurvey.co.za</string>
+    <string name="support_email_subject">SN@PP APP query</string>
+    <string name="support_email_message">There seems to be an issue with my details on the SN@PP APP</string>
+
+    <string name="block_screen">Block Screen</string>
+    <string name="sales_screen">Sales Screen</string>
+    <string name="message_screen">Message Screen</string>
+    <string name="matrix_screen">Matrix Screen</string>
+    <string name="login_screen">Login Screen</string>
+</resources>

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@drawable/layer6"
+            android:paddingLeft="55dp"
+            android:paddingTop="20dp">
+
+            <TextView
+                style="@style/titleBlackMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/title"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Hot Leads"
+                android:textColor="@color/white"
+                android:textSize="24sp"/>
+
+        </RelativeLayout>
+
+        <ScrollView android:layout_height="match_parent"
+            android:layout_width="match_parent">
+
+            <LinearLayout
+                android:padding="@dimen/margin_50"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+
+
+                <LinearLayout
+                    android:visibility="gone"
+                    tools:visibility="visible"
+                    android:id="@+id/refer_section"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        style="@style/MontserratRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/padding_30"
+                        android:text="Please select who you would like to refer this Hot Lead to."
+                        android:textSize="14dp" />
+
+
+                    //recycler or list view with leads returned from search..
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/advisor_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    </androidx.recyclerview.widget.RecyclerView>
+
+
+                    <TextView
+                        android:id="@+id/refer"
+                        style="@style/accentTextButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="8dp"
+                        android:clickable="true"
+                        android:elevation="2dp"
+                        android:focusable="true"
+                        android:text="REFER" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="#d0d0d0" />
+
+
+                    <TextView
+                        style="@style/MontserratRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/padding_30"
+                        android:text="If you did not find the adviser you were looking for, please refine your search."
+                        android:textSize="14dp" />
+
+
+
+                </LinearLayout>
+
+                <TextView
+                    style="@style/MontserratMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="First Name" />
+
+                <EditText
+                    android:id="@+id/fname"
+                    style="@style/inputFieldBorder"
+                    android:background="@drawable/grey_rounded_input_background"
+                    android:layout_marginBottom="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp" />
+
+                <TextView
+                    style="@style/MontserratMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Surname" />
+
+                <EditText
+                    android:id="@+id/sname"
+                    style="@style/inputFieldBorder"
+                    android:background="@drawable/grey_rounded_input_background"
+                    android:layout_marginBottom="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp" />
+
+                <TextView
+                    style="@style/MontserratMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sales code" />
+
+                <EditText
+                    android:id="@+id/sales_code"
+                    style="@style/inputFieldBorder"
+                    android:background="@drawable/grey_rounded_input_background"
+                    android:layout_marginBottom="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"/>
+
+                <TextView
+                    android:id="@+id/search"
+                    style="@style/readMore"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="8dp"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:elevation="2dp"
+                    android:focusable="true"
+                    android:text="SEARCH" />
+
+
+            </LinearLayout>
+        </ScrollView>
+
+
+
+
+
+
+
+
+
+
+
+
+    </LinearLayout>
+</layout>

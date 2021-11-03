@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <ScrollView android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:background="@drawable/layer6"
+                xmlns:android="http://schemas.android.com/apk/res/android">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="80dp">
+
+            <TextView
+                android:fontFamily="@font/montserrat_bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Sorry"
+                android:textSize="42.7sp"
+                android:letterSpacing="-0.05"
+                android:lineSpacingExtra="1.3sp"
+                android:textColor="@color/white"/>
+
+            <TextView
+                style="@style/titleBlackMedium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:gravity="center_horizontal"
+                android:text="Your device doesn't support this page."
+                android:letterSpacing="-0.05"
+                android:lineSpacingExtra="0.7sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="24sp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</layout>
+

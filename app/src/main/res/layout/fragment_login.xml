@@ -1,0 +1,140 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/banner">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="40dp">
+
+            <LinearLayout
+                android:id="@+id/login_box"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/margin_20"
+                android:background="@color/windowBackground"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:letterSpacing="-0.05"
+                    android:lineSpacingExtra="5.3sp"
+                    android:text="Login using your Secure Services"
+                    android:textColor="#8dc63f"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:letterSpacing="-0.05"
+                    android:lineSpacingExtra="5.3sp"
+                    android:text="login details"
+                    android:textColor="#8dc63f"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <com.cobi.puresurveyandroid.view.EditText
+                    android:id="@+id/user_name_edit_text"
+                    style="@style/inputField"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/user_name_hint"
+                    app:errorEnabled="true" />
+
+                <com.cobi.puresurveyandroid.view.EditText
+                    android:id="@+id/password_edit_text"
+                    style="@style/inputField"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/password_hint"
+                    android:inputType="textPassword"
+                    app:errorEnabled="true" />
+
+                <TextView
+                    android:id="@+id/login_button"
+                    style="@style/accentTextButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:clickable="true"
+                    android:layout_marginTop="8dp"
+                    android:drawableEnd="@drawable/arrow_on_button"
+                    android:drawableRight="@drawable/arrow_on_button"
+                    android:elevation="2dp"
+                    android:focusable="true"
+                    android:text="@string/login_button" />
+
+
+                <TextView
+                    android:layout_marginBottom="5dp"
+                    android:id="@+id/forgotPassword"
+                    android:layout_width="wrap_content"
+                    style="@style/MontserratRegular"
+                    android:textStyle="bold"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorAccent"
+                    android:text="Forgot your password?"></TextView>
+
+                <TextView
+                    android:id="@+id/forgotUsername"
+                    android:layout_width="wrap_content"
+                    style="@style/MontserratRegular"
+                    android:textStyle="bold"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorAccent"
+                    android:text="Forgot your username/number?"></TextView>
+
+                <ProgressBar
+                    android:id="@+id/progress"
+                    style="@style/progressBarStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/contact_prompt"
+                style="@style/inputField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/login_box"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/margin_30"
+                android:gravity="center_horizontal"
+                android:lineSpacingExtra="@dimen/line_extra_4"
+                android:text="@string/contact_prompt"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/contact_button"
+                style="@style/accentTextButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/contact_prompt"
+                android:layout_centerHorizontal="true"
+                android:clickable="true"
+                android:drawableEnd="@drawable/green_arrow"
+                android:drawableRight="@drawable/green_arrow"
+                android:focusable="true"
+                android:onClick="contactPressed"
+                android:text="@string/contact_button_text"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+</layout>
+

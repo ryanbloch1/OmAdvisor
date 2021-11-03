@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="badgerCount"
+            type="int" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/margin_5"
+            android:layout_marginEnd="@dimen/margin_30"
+            android:layout_marginRight="@dimen/margin_30">
+
+            <com.github.pavlospt.roundedletterview.RoundedLetterView
+                android:id="@+id/notification_badge"
+                android:layout_width="@dimen/margin_15"
+                android:layout_height="@dimen/margin_15"
+                app:paddingEnd="@dimen/padding_5"
+                app:paddingStart="@dimen/padding_5"
+                app:roundedLetterView="@{badgerCount}" />
+
+        </FrameLayout>
+    </RelativeLayout>
+</layout>

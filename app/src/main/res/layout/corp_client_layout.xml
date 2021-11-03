@@ -1,0 +1,132 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+
+        <variable
+            name="data"
+            type="com.cobi.puresurveyandroid.model.Corporate" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_10"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:enabled="false"
+                android:id="@+id/yes"
+                android:checked="@{data.corporateClient ? true : false}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="10dp"
+                android:text="Yes"></CheckBox>
+
+            <CheckBox
+                android:enabled="false"
+                android:id="@+id/no"
+                android:checked="@{!data.corporateClient ? true : false}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="10dp"
+                android:text="No"></CheckBox>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/keyBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="10dp"
+                android:text="Corporate Scheme: "></TextView>
+
+            <TextView
+                style="@style/valuePopup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{data.corporateScheme}"></TextView>
+
+        </LinearLayout>
+
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <TextView-->
+<!--                style="@style/keyBold"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:paddingRight="10dp"-->
+<!--                android:text="Funds:  "></TextView>-->
+
+<!--            <TextView-->
+<!--                style="@style/valuePopup"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="@{data.}"></TextView>-->
+
+<!--        </LinearLayout>-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <TextView-->
+<!--                style="@style/keyBold"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:paddingRight="10dp"-->
+<!--                android:text="Savings: "></TextView>-->
+
+<!--            <TextView-->
+<!--                style="@style/valuePopup"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="476816.36"></TextView>-->
+
+<!--        </LinearLayout>-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <TextView-->
+<!--                style="@style/keyBold"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:paddingRight="10dp"-->
+<!--                android:text="Monthly contributions: "></TextView>-->
+
+<!--            <TextView-->
+<!--                style="@style/valuePopup-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="@{null}"></TextView>-->
+
+<!--        </LinearLayout>-->
+
+
+    </LinearLayout>
+
+</layout>
+
+

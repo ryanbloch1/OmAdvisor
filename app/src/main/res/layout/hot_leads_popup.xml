@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@drawable/layout_rounded"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/close"
+        android:src="@drawable/close_icon_d"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_width="25dp"
+        android:layout_height="25dp">
+    </ImageView>
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_below="@+id/close"
+        android:orientation="vertical"
+        android:paddingBottom="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            style="@style/topTitle"
+            android:id="@+id/topText"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            tools:text="Accepted"/>
+
+        <TextView
+            android:id="@+id/subTitle"
+            style="@style/bodyCopy2"
+            android:padding="@dimen/margin_5"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Thank you for accepting the hot lead"
+            android:textColor="@color/black"
+            android:textSize="14dp" />
+
+
+        <LinearLayout
+            android:visibility="gone"
+            android:orientation="vertical"
+            android:id="@+id/rejected_layout"
+            android:layout_width="match_parent"
+            android:padding="20dp"
+            tools:visibility="visible"
+            android:gravity="center"
+            android:layout_height="wrap_content">
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginBottom="@dimen/margin_10"
+                android:background="@drawable/layout_dropdown"
+                android:padding="@dimen/margin_10">
+
+            </Spinner>
+
+            <TextView
+                android:id="@+id/submit"
+                style="@style/accentTextButtonSubmit"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_20"
+                android:gravity="center"
+                android:padding="@dimen/margin_10"
+                android:text="submit">
+
+            </TextView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+</RelativeLayout>

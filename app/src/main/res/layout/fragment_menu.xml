@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/layoutLeads"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:paddingLeft="@dimen/padding_40"
+            android:paddingRight="@dimen/padding_17">
+
+            <ImageView
+                android:id="@+id/imageViewLeads"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/margin_25"
+                android:layout_marginRight="@dimen/margin_25"
+                android:src="@drawable/ic_leads_menu" />
+
+            <TextView
+                style="@style/listLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/imageViewLeads"
+                android:layout_toRightOf="@+id/imageViewLeads"
+                android:text="@string/leads" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="@dimen/margin_50"
+            android:layout_marginLeft="@dimen/margin_50"
+            android:background="@color/divider_colour" />
+
+        <RelativeLayout
+            android:id="@+id/layoutPipeline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/padding_40"
+            android:paddingTop="10dp"
+            android:paddingRight="@dimen/padding_17">
+
+            <ImageView
+                android:id="@+id/imageViewPipeline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_25"
+                android:layout_marginRight="@dimen/margin_25"
+                android:src="@drawable/ic_pipeline_menu" />
+
+            <TextView
+                style="@style/listLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/imageViewPipeline"
+                android:layout_toRightOf="@+id/imageViewPipeline"
+                android:text="@string/pipeline" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="@dimen/margin_50"
+            android:layout_marginLeft="@dimen/margin_50"
+            android:background="@color/divider_colour" />
+
+        <RelativeLayout
+            android:id="@+id/layoutLapses"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/padding_40"
+            android:paddingRight="@dimen/padding_40">
+
+            <ImageView
+                android:id="@+id/imageViewLapses"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/ic_missed_menu" />
+
+            <TextView
+                style="@style/listLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/imageViewLapses"
+                android:layout_toRightOf="@+id/imageViewLapses"
+                android:paddingLeft="15dp"
+                android:text="@string/missed_premiums" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="@dimen/margin_50"
+            android:layout_marginLeft="@dimen/margin_50"
+            android:background="@color/divider_colour" />
+
+        <RelativeLayout
+            android:id="@+id/layoutHelp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/padding_40"
+            android:paddingRight="@dimen/padding_40"
+            android:paddingBottom="@dimen/padding_10">
+
+            <ImageView
+                android:id="@+id/imageViewHelp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/margin_25"
+                android:layout_marginRight="@dimen/margin_25"
+                android:src="@drawable/ic_help_menu" />
+
+            <TextView
+                style="@style/listLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/imageViewHelp"
+                android:layout_toRightOf="@+id/imageViewHelp"
+                android:text="@string/help_4_u" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="@dimen/margin_50"
+            android:layout_marginLeft="@dimen/margin_50"
+            android:background="@color/divider_colour" />
+
+        <TextView
+            android:id="@+id/buttonLogout"
+            style="@style/accentTextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:clickable="true"
+            android:drawableEnd="@drawable/green_arrow"
+            android:drawableRight="@drawable/green_arrow"
+            android:focusable="true"
+            android:text="@string/logout" />
+
+    </LinearLayout>
+
+</layout>

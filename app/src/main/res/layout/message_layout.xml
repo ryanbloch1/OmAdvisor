@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="data"
+            type="com.cobi.puresurveyandroid.model.EventMessage" />
+
+        <variable
+            name="commentNumber"
+            type="Integer" />
+
+        <variable
+            name="likes"
+            type="Integer" />
+
+        <variable
+            name="initials"
+            type="String" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  xmlns:tools="http://schemas.android.com/tools"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="vertical"
+                  android:padding="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:id="@+id/circleImage"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="@dimen/margin_10"
+                android:layout_marginRight="@dimen/margin_10"
+                android:background="@drawable/rounded_background"
+                android:layout_marginTop="5dp"
+                tools:backgroundTint="@color/aqua"
+                android:padding="@dimen/padding_6">
+
+                <TextView
+                    android:id="@+id/textViewName"
+                    style="@style/whiteCounterText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@{data.isAnonymous ? `` : initials}"
+                    tools:text="RB" />
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    style="@style/event_main_text"
+                    android:layout_height="wrap_content"
+                    android:text="@{data.isAnonymous ? `ANONYMOUS` : data.clientName}"
+                    tools:text="Jane Doe" />
+
+                <TextView
+                    android:id="@+id/wasSent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/event_main_text"
+                    android:textColor="@color/mediumGrey"
+                    tools:text="40 minutes ago" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            style="@style/event_main_text"
+            android:text="@{data.message}"
+            tools:text="Message that the attendee posted on the
+live feed will appear here..." />
+
+        <ProgressBar
+            android:id="@+id/progress"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:visibility="gone"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="15dp"/>
+
+        <ImageView
+            android:id="@+id/message_image"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="15dp"
+            android:visibility="@{data.image !=null ? View.VISIBLE : View.GONE}" />
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="12dp">
+
+            <TextView
+                android:id="@+id/reply"
+                style="@style/likeReply"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:text="Reply" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@color/skyBlue" />
+
+            <ImageView
+                android:id="@+id/like"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:background="@{data.isLiked ?  @drawable/liked : @drawable/not_liked}"
+                android:text="Like" />
+
+            <TextView
+                android:id="@+id/no_of_likes"
+                style="@style/likeReply"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="7dp"
+                android:clickable="true"
+                android:text="@{likes > 0 ? String.valueOf(likes) + ` Likes` : ``}"
+                tools:text="4 Likes" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/layoutCustomerRow"
+            android:layout_marginTop="@dimen/margin_20"
+            android:layout_marginBottom="@dimen/margin_10"
+            android:background="@color/divider_colour" />
+
+        <TextView
+            android:id="@+id/viewMore"
+            style="@style/likeReply"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:layout_margin="15dp"
+            android:visibility="gone"
+            tools:text="View 3 more comments"
+            android:text="@{`View ` + commentNumber + ` more comments`}" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/comment_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></androidx.recyclerview.widget.RecyclerView>
+
+        <TextView
+            android:id="@+id/hide"
+            style="@style/likeReply"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:layout_margin="15dp"
+            android:visibility="gone"
+            android:text="Hide comments" />
+
+    </LinearLayout>
+</layout>

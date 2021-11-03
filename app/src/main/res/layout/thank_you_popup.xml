@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@drawable/layout_rounded"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/close"
+        android:src="@drawable/close_icon_d"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp">
+    </ImageView>
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_below="@+id/close"
+        android:orientation="vertical"
+        android:paddingBottom="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:src="@drawable/thanks"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/subTitle"
+            style="@style/MontserratBold"
+            android:padding="@dimen/margin_5"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thank you"
+            android:textSize="14dp" />
+
+
+        <TextView
+            style="@style/valuePopup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            android:padding="@dimen/margin_5"
+            android:textSize="14dp"
+            android:text="This client has been accepted." />
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+</RelativeLayout>

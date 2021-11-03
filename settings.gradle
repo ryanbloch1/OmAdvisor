@@ -1,0 +1,3 @@
+include ':app'
+
+include ':xmsadapter', ':xmsadapter:xmsaux', ':xmsadapter:xmsaux:xg', ':xmsadapter:xmsaux:xh', ':xmsadapter:xmsaux:xapi'

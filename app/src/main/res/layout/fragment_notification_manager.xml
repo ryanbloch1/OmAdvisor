@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="isExtended"
+            type="boolean" />
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/top"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:background="@drawable/layer6"
+            android:orientation="vertical"
+            android:paddingLeft="50dp"
+            android:paddingTop="20dp">
+
+            <TextView
+                style="@style/topTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Notifications Manager"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/text2"
+                style="@style/topTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Please select which notifications you would like to receive. Please note that Priority 1 Notifications are mandatory."
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/changeable"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+                <RelativeLayout
+                    android:padding="20dp"
+                    android:background="@color/graphEmpty"
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/extend"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:paddingLeft="20dp"
+                        android:id="@+id/pTitle"
+                        style="@style/keyBold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Priority 1 Notifications"
+                        android:textSize="12dp" />
+
+                    <TextView
+                        android:paddingLeft="20dp"
+                        style="@style/valuePopup"
+                        android:paddingTop="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/pTitle"
+                        android:text="Click here to view Priority 1 notifications"
+                        android:textSize="12dp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginRight="20dp"
+                        tools:src="@drawable/downarrow"
+                        android:src="@{isExtended ? @drawable/uparrow : @drawable/downarrow}">
+
+                    </ImageView>
+
+
+
+
+
+                </RelativeLayout>
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/unchageable"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+            </LinearLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+
+
+
+
+
+    </LinearLayout>
+
+
+</layout>
+
+

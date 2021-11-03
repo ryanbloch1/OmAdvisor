@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.text.TextUtils" />
+
+        <import type="com.cobi.puresurveyandroid.util.NumberFormatter" />
+
+        <import type="com.cobi.puresurveyandroid.util.DateHelper" />
+        <variable
+            name="data"
+            type="com.cobi.puresurveyandroid.model.CSIContactDetails" />
+
+    </data>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@drawable/layer6"
+                android:orientation="vertical"
+                android:paddingLeft="50dp"
+                android:paddingTop="20dp">
+
+                <TextView
+                    android:id="@+id/text1"
+                    style="@style/topTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="My Leads"
+                    android:textColor="@color/white"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/text3"
+                    style="@style/MontserratRegular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Contact Details"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/margin_20"
+                android:background="@color/divider_colour" />
+
+            <TextView
+                android:id="@+id/textViewEventTitle"
+                style="@style/titleBlackMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_15"
+                android:layout_marginLeft="@dimen/margin_15"
+                android:gravity="center"
+                android:paddingLeft="30dp"
+                android:paddingTop="@dimen/padding_16"
+                android:text="@{data.fullName}" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingLeft="30dp">
+
+                        <RelativeLayout
+                            android:id="@+id/layoutContactPhone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="@dimen/margin_15"
+                            android:paddingTop="@dimen/margin_25"
+                            android:paddingRight="@dimen/margin_15"
+                            android:paddingBottom="@dimen/margin_25">
+
+                            <ImageView
+                                android:id="@+id/imageViewPhone"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginEnd="@dimen/margin_20"
+                                android:layout_marginRight="@dimen/margin_20"
+                                android:src="@{TextUtils.isEmpty(data.workNumber) ? @drawable/landline_disabled : @drawable/landline}"
+                                tools:src="@drawable/landline" />
+
+                            <TextView
+                                android:id="@+id/textViewPhone"
+                                style="@style/listLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_toEndOf="@+id/imageViewPhone"
+                                android:layout_toRightOf="@+id/imageViewPhone"
+                                android:text="@{TextUtils.isEmpty(data.workNumber) ? @string/placeholder_landline : NumberFormatter.formatPhoneNumber(data.workNumber)}"
+                                android:textColor="@{TextUtils.isEmpty(data.workNumber) ? @color/secondaryTextColour : @color/textColour}"
+                                tools:text="011 123 4567"
+                                tools:textColor="@color/textColour" />
+
+                        </RelativeLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginStart="@dimen/margin_50"
+                            android:layout_marginLeft="@dimen/margin_50"
+                            android:background="@color/divider_colour" />
+
+                        <RelativeLayout
+                            android:id="@+id/layoutContactMobile"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="@dimen/margin_15"
+                            android:paddingTop="@dimen/margin_25"
+                            android:paddingRight="@dimen/margin_15"
+                            android:paddingBottom="@dimen/margin_25">
+
+                            <ImageView
+                                android:id="@+id/imageViewSMS"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginEnd="@dimen/margin_20"
+                                android:layout_marginRight="@dimen/margin_20"
+                                android:src="@{TextUtils.isEmpty(data.workMobileNumber) ? @drawable/mobile_disabled : @drawable/mobile}"
+                                tools:src="@drawable/mobile" />
+
+                            <TextView
+                                android:id="@+id/textViewSMS"
+                                style="@style/listLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toEndOf="@+id/imageViewSMS"
+                                android:layout_toRightOf="@+id/imageViewSMS"
+                                android:text="@{TextUtils.isEmpty(data.workMobileNumber) ? @string/placeholder_mobile : NumberFormatter.formatPhoneNumber(data.workMobileNumber)}"
+                                android:textColor="@{TextUtils.isEmpty(data.workMobileNumber) ? @color/secondaryTextColour : @color/textColour}"
+                                tools:text="082 123 4567"
+                                tools:textColor="@color/textColour" />
+
+                        </RelativeLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginStart="@dimen/margin_50"
+                            android:layout_marginLeft="@dimen/margin_50"
+                            android:background="@color/divider_colour" />
+
+                        <RelativeLayout
+                            android:id="@+id/layoutContactEmail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="@dimen/margin_15"
+                            android:paddingTop="@dimen/margin_25"
+                            android:paddingRight="@dimen/margin_15"
+                            android:paddingBottom="@dimen/margin_25">
+
+                            <ImageView
+                                android:id="@+id/imageViewEmail"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginEnd="@dimen/margin_20"
+                                android:layout_marginRight="@dimen/margin_20"
+                                android:src="@{TextUtils.isEmpty(data.workEmailAddress) ? @drawable/email_disabled : @drawable/email}"
+                                tools:src="@drawable/email" />
+
+                            <TextView
+                                android:id="@+id/textViewEmail"
+                                style="@style/listLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_toEndOf="@+id/imageViewEmail"
+                                android:layout_toRightOf="@+id/imageViewEmail"
+                                android:text="@{TextUtils.isEmpty(data.workMobileNumber) ? @string/placeholder_email : data.workEmailAddress}"
+                                android:textColor="@{TextUtils.isEmpty(data.workEmailAddress) ? @color/secondaryTextColour : @color/textColour}"
+                                tools:text="arya@gmail.com"
+                                tools:textColor="@color/textColour" />
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/textView"
+                    style="@style/listSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_20"
+                    android:paddingLeft="50dp"
+                    android:text="@string/placeholder_personalised_message" />
+
+                <LinearLayout
+                    android:gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_50"
+                    android:layout_marginTop="@dimen/margin_5"
+                    android:layout_marginRight="@dimen/margin_30"
+                    android:layout_marginBottom="@dimen/margin_5"
+                    android:orientation="horizontal"
+                    android:paddingRight="30dp">
+
+                    <TextView
+                        android:id="@+id/layoutEmail"
+                        style="@style/accentTextButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@{TextUtils.isEmpty(data.workEmailAddress) ?  @drawable/grey_outline_button_background : @drawable/gradient_button_background}"
+                        android:clickable="true"
+                        android:drawableEnd="@{TextUtils.isEmpty(data.workEmailAddress) ?  @drawable/grey_arrow : @drawable/arrow_on_button}"
+                        android:drawableRight="@{TextUtils.isEmpty(data.workEmailAddress) ?  @drawable/grey_arrow : @drawable/arrow_on_button}"
+                        android:focusable="true"
+                        android:enabled="@{!TextUtils.isEmpty(data.workEmailAddress)}"
+                        android:text="@string/email_button"
+                        android:textColor="@{TextUtils.isEmpty(data.workEmailAddress) ?  @color/disabledContent : @color/enabledTextColour}"
+                        tools:drawableEnd="@drawable/arrow_on_button"
+                        tools:textColor="@color/enabledTextColour" />
+
+                    <TextView
+                        android:id="@+id/layoutSms"
+                        style="@style/accentTextButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_10"
+                        android:layout_marginLeft="@dimen/margin_10"
+                        android:layout_weight="1"
+                        android:background="@{TextUtils.isEmpty(data.workMobileNumber) ?  @drawable/grey_outline_button_background : @drawable/gradient_button_background}"
+                        android:clickable="true"
+                        android:drawableEnd="@{TextUtils.isEmpty(data.workMobileNumber) ?  @drawable/grey_arrow : @drawable/arrow_on_button}"
+                        android:drawableRight="@{TextUtils.isEmpty(data.workMobileNumber) ?  @drawable/grey_arrow : @drawable/arrow_on_button}"
+                        android:focusable="true"
+                        android:enabled="@{!TextUtils.isEmpty(data.workMobileNumber) }"
+                        android:text="@string/sms_button"
+                        android:textColor="@{TextUtils.isEmpty(data.workMobileNumber) ?  @color/disabledContent : @color/enabledTextColour}"
+                        tools:drawableEnd="@drawable/arrow_on_button"
+                        tools:textColor="@color/enabledTextColour" />
+                    <ImageView
+                        android:id="@+id/whatsapp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="10dp"
+                        android:src="@drawable/whatsapp"></ImageView>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:src="@drawable/loading"
+        android:visibility="visible"
+        tools:visibility="gone" />
+</RelativeLayout>
+</layout>
+

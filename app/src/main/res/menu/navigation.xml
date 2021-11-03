@@ -1,0 +1,35 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/action_my_customer"
+        android:enabled="true"
+        android:icon="@drawable/ic_my_customer"
+        android:title="@string/menu_my_customer" />
+
+    <item
+        android:id="@+id/action_birthdays"
+        android:enabled="true"
+        android:icon="@drawable/ic_events"
+        android:title="@string/menu_Birthdays" />
+
+
+    <item
+        android:id="@+id/action_reinter"
+        android:enabled="true"
+        android:icon="@drawable/reinter_icon"
+        android:title="RE-INTERMEDIATION" />
+
+
+    <item
+        android:id="@+id/action_events"
+        android:enabled="true"
+        android:icon="@drawable/om_eventsx1"
+        android:title="OM EVENTS" />
+
+    <item
+        android:id="@+id/action_commission"
+        android:enabled="true"
+        android:icon="@drawable/ic_commission"
+        android:title="@string/menu_commission" />
+
+</menu>

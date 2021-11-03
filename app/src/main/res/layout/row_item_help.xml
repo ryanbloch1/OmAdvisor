@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.cobi.puresurveyandroid.model.sales.Help" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_10"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/margin_15"
+            android:paddingTop="@dimen/margin_25"
+            android:paddingRight="@dimen/margin_15"
+            android:paddingBottom="@dimen/margin_25">
+
+            <TextView
+                android:id="@+id/textViewName"
+                style="@style/listLargeInactive"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@{data.getName()}"
+                tools:text="OMInsure" />
+
+            <TextView
+                android:id="@+id/textViewNumber"
+                style="@style/listLarge"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:text="@{data.getNumber()}"
+                android:textColor="@color/dividerColor"
+                android:textSize="@dimen/text_size_16"
+                tools:text="011 123 4567" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="@dimen/margin_50"
+            android:layout_marginLeft="@dimen/margin_50"
+            android:background="@color/divider_colour" />
+
+    </LinearLayout>
+</layout>

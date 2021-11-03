@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/layout_rounded"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <ImageView
+            android:id="@+id/close"
+            android:src="@drawable/close_icon_d"
+            android:layout_alignParentRight="true"
+            android:layout_margin="@dimen/margin_20"
+            android:layout_width="25dp"
+            android:layout_height="25dp">
+        </ImageView>
+
+        <LinearLayout android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+
+                <ImageView
+                    android:src="@drawable/rate_dialog_icon"
+                    android:layout_width="90dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginTop="@dimen/margin_20"
+                    android:layout_height="90dp">
+
+                </ImageView>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    style="@style/topTitle"
+                    android:textSize="18dp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:layout_height="wrap_content"
+                    android:text="Enjoying the app?"/>
+
+                <TextView
+                    style="@style/bodyCopy2"
+                    android:padding="@dimen/margin_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Please take a moment to rate it. "
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="20dp"
+                    android:textSize="14dp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#CCCCCC"></View>
+
+
+                <TextView
+                    android:id="@+id/rate"
+                    android:padding="20dp"
+                    android:text="Yes, rate it now!"
+                    android:gravity="center"
+                    android:textSize="14dp"
+                    style="@style/MontserratBold"
+                    android:textColor="@color/fadedBlack"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#CCCCCC"></View>
+
+
+                <TextView
+                    android:id="@+id/remind"
+                    style="@style/MontserratBold"
+                    android:textColor="@color/fadedBlack"
+                    android:text="No, not right now."
+                    android:padding="20dp"
+                    android:textSize="14dp"
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:layout_height="wrap_content"/>
+
+
+        </LinearLayout>
+
+
+
+</RelativeLayout>
+
+
+
+
+

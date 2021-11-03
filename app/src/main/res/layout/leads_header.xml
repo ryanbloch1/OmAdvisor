@@ -1,0 +1,20 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="85dp"
+              android:id="@+id/leads_header"
+              android:background="@drawable/layer6"
+              android:orientation="vertical"
+              android:paddingLeft="50dp"
+              android:paddingTop="20dp">
+
+    <TextView
+        android:id="@+id/text1"
+        style="@style/topTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="My Leads"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+</LinearLayout>

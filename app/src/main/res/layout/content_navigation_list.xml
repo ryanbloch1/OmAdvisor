@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:clickable="true"
+        android:layout_marginStart="-64dp"
+        android:layout_marginLeft="-64dp"
+        android:fitsSystemWindows="true"
+        tools:visibility="gone">
+
+        <RelativeLayout
+            android:id="@+id/close_container"
+            android:layout_width="wrap_content"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/white">
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="3dp"
+                android:background="@drawable/shadow" />
+
+            <ImageView
+                android:id="@+id/nav_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/margin_15"
+                android:layout_marginRight="@dimen/margin_15"
+                android:src="@drawable/close" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="3dp"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/shadow" />
+
+        </RelativeLayout>
+
+        <!-- Listview to display slider menu -->
+        <ListView
+            android:id="@+id/nav_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/margin_50"
+            android:layout_marginLeft="@dimen/margin_50"
+            android:background="@color/navigationDrawerBackground"
+            android:choiceMode="singleChoice"
+            android:divider="@null"
+            android:dividerHeight="0dp"
+            android:paddingStart="@dimen/margin_44"
+            android:paddingLeft="@dimen/margin_44"
+            android:paddingEnd="@dimen/padding_20"
+            android:paddingRight="@dimen/padding_20"
+            tools:listitem="@layout/drawer_title_item" />
+
+    </RelativeLayout>
+
+</layout>

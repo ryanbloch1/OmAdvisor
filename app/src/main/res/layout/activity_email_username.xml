@@ -1,0 +1,270 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="android.text.Html" />
+    </data>
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:context=".activity.ResetCredentialActivity"
+        tools:openDrawer="right">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/include_toolbar"
+                layout="@layout/action_bar_logout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_50"
+                android:layout_marginLeft="@dimen/margin_50"
+                android:layout_marginTop="-60dp"
+                android:elevation="2dp"
+                android:src="@drawable/logo_top_nav"
+                tools:targetApi="lollipop" />
+
+            <LinearLayout
+                android:id="@+id/creds_sent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:padding="15dp"
+                    android:src="@drawable/ic_tick"></ImageView>
+
+                <TextView
+                    android:id="@+id/success_heading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:textAllCaps="true"
+                    android:textColor="#0A9D72"
+                    android:gravity="center"
+                    android:padding="15dp"
+                    android:textSize="15dp"
+                    tools:text="dstdsfdsaffsdfsdffsdfdsfd dsf dsfdsfdfdfdfdf" />
+
+                <TextView
+                    android:id="@+id/success_blurb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:textColor="@color/black"
+                    android:textSize="19dp"
+                    android:textStyle="bold"
+                    tools:text="Please check you phone for a sms" />
+
+
+                <TextView
+                    android:id="@+id/goToLogin"
+                    style="@style/accentTextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="30dp"
+                    android:clickable="true"
+                    android:elevation="2dp"
+                    android:focusable="true"
+                    android:text="GO TO LOGIN PAGE" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:padding="15dp"
+                    android:text="@{Html.fromHtml(@string/no_sms)}"
+                    android:textColor="@color/black"
+                    android:textSize="14dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/technical_error"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="50dp"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:visibility="gone"
+                tools:visibility="gone">
+
+                <TextView
+                    style="@style/MontserratBold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="TECHNICAL ERROR" />
+
+                <TextView
+                    style="@style/MontserratRegular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="There was a problem with our system. We apologize for the inconvenience"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/goBack"
+                    style="@style/MontserratRegular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp"
+                    android:text="Go back and try again"
+                    android:textColor="@color/colorAccent" />
+
+                <TextView
+                    android:id="@+id/errorText"
+                    style="@style/MontserratRegular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{Html.fromHtml(@string/error_html)}" />
+
+                <TextView
+                    android:id="@+id/secureLink"
+                    style="@style/MontserratRegular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="help-secure@oldmutual.com"
+                    android:textColor="@color/colorAccent" />
+
+            </LinearLayout>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/banner">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="40dp">
+
+                    <LinearLayout
+                        android:id="@+id/login_box"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="40dp"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:gravity="center"
+                            android:letterSpacing="-0.05"
+                            android:lineSpacingExtra="5.3sp"
+                            android:text="@string/request_username"
+                            android:textColor="@color/black"
+                            android:textSize="20dp"
+                            android:textStyle="bold"
+                            tools:text="@string/request_username" />
+
+                        <TextView
+                            style="@style/MontserratRegular"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/padding_30"
+                            android:text="We need a few details to match you on our system"
+                            android:textSize="14dp" />
+
+                        <TextView
+                            style="@style/MontserratMedium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Surname" />
+
+                        <EditText
+                            android:id="@+id/identifier"
+                            style="@style/inputFieldBorder"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:maxLength="64"
+                            app:errorEnabled="true" />
+
+                        <TextView
+                            style="@style/MontserratMedium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/margin_10"
+                            android:text="ID TYPE" />
+
+                        <Spinner
+                            android:id="@+id/countryCodeSpinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="43dp"
+                            android:layout_marginBottom="15dp"
+                            android:background="@drawable/spinner_background" />
+
+                        <TextView
+                            style="@style/MontserratMedium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="ID NUMBER" />
+
+                        <EditText
+                            android:id="@+id/cell_number"
+                            style="@style/inputFieldBorder"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number" />
+
+                        <TextView
+                            style="@style/MontserratMedium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="EMAIL ADDRESS" />
+
+                        <EditText
+                            android:id="@+id/email"
+                            style="@style/inputFieldBorder"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number" />
+
+                        <TextView
+                            android:id="@+id/send_request"
+                            style="@style/accentTextButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="8dp"
+                            android:clickable="true"
+                            android:elevation="2dp"
+                            android:focusable="true"
+                            android:text="EMAIL ME MY USERNAME" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </ScrollView>
+
+        </LinearLayout>
+
+        <include layout="@layout/content_navigation_list" />
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+</layout>
+

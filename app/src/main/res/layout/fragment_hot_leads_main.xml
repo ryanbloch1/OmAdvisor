@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="leadName"
+            type="String" />
+
+        <variable
+            name="expiration"
+            type="String" />
+
+        <variable
+            name="leadDesc"
+            type="String" />
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@drawable/layer6"
+            android:paddingLeft="55dp"
+            android:paddingTop="20dp">
+
+            <TextView
+                style="@style/titleBlackMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Hot Leads"
+                android:textColor="@color/white"
+                android:textSize="24sp" />
+
+        </RelativeLayout>
+
+        <TextView
+            style="@style/titleBlackMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#009677"
+            android:paddingLeft="55dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:textStyle="bold"
+            android:text="@{leadName}"
+            tools:text="Ryan, Bloch"
+            android:textColor="@color/white"
+            android:textSize="20sp"/>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:padding="50dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    style="@style/titleBlackMedium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/padding_20"
+                    android:text="@{leadDesc}"
+                    android:textColor="@color/black"
+                    tools:text="GREENLIGHT 2 YEAR
+UNDERWRITING CREDIT
+OFFER - Oct 2020 EXPIRY NAM"
+                    android:textSize="18dp"/>
+
+
+                <TextView
+                    style="@style/titleBlackMedium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/padding_20"
+                    android:text="@{  expiration !=null ? @string/lead_actions + @string/lead_expires + expiration : @string/lead_actions}"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"/>
+
+                <TextView
+                    android:id="@+id/accept"
+                    style="@style/readMore"
+                    android:padding="15dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="8dp"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:elevation="2dp"
+                    android:focusable="true"
+                    android:text="ACCEPT" />
+
+
+                <TextView
+                    android:id="@+id/reject"
+                    style="@style/readMore"
+                    android:padding="15dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="8dp"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:elevation="2dp"
+                    android:focusable="true"
+                    android:text="REJECT" />
+
+
+                <TextView
+                    android:id="@+id/refer"
+                    style="@style/readMore"
+                    android:padding="15dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="8dp"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:elevation="2dp"
+                    android:focusable="true"
+                    android:text="REFER" />
+
+
+
+
+
+            </LinearLayout>
+        </ScrollView>
+
+
+
+
+
+
+
+    </LinearLayout>
+</layout>
+
+
+

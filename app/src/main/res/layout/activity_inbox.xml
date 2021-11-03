@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:context=".activity.InboxActivity"
+        tools:openDrawer="end">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <include
+                    android:id="@+id/include_toolbar"
+                    layout="@layout/action_bar_logout" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_50"
+                    android:layout_marginLeft="@dimen/margin_50"
+                    android:layout_marginTop="-4dp"
+                    android:elevation="2dp"
+                    android:src="@drawable/logo_top_nav" />
+
+                <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                    android:id="@+id/swipe_container"
+                    android:layout_width="match_parent"
+                    android:layout_below="@+id/include_toolbar"
+                    android:layout_height="wrap_content">
+
+                <ScrollView
+                    android:id="@+id/dialogsListScrollView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false">
+
+                        <LinearLayout
+                            android:id="@+id/dialogsListContainer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                        </LinearLayout>
+
+
+                </ScrollView>
+
+                </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+                <FrameLayout
+                    android:id="@+id/fragment_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingTop="50dp"
+                    android:visibility="gone" />
+
+                <pl.droidsonroids.gif.GifImageView
+                    android:id="@+id/progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/loading"
+                    android:visibility="visible"
+                    tools:visibility="visible" />
+
+            </RelativeLayout>
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottom_navigation"
+                android:layout_width="match_parent"
+                android:background="@color/white"
+                android:layout_height="wrap_content"
+                app:itemBackground="@color/bottomNavigationBackground"
+                app:itemIconTint="@drawable/bottom_navigation_states"
+                app:itemTextColor="@drawable/bottom_navigation_states"
+                app:labelVisibilityMode="labeled"
+                app:menu="@menu/navigation_matrix" />
+
+        </LinearLayout>
+
+        <!-- Navigation Drawer List -->
+        <include layout="@layout/content_navigation_list" />
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+</layout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.cobi.puresurveyandroid.util.DateHelper" />
+
+        <variable
+            name="data"
+            type="com.cobi.puresurveyandroid.model.CSIContactDetails" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_15"
+        android:layout_marginLeft="@dimen/margin_15">
+
+        <TextView
+            android:id="@+id/textViewEventSubTitle"
+            style="@style/listSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text='@{data.dateOfBirth}'
+            tools:text="Birthday: 01 Sep" />
+    </RelativeLayout>
+</layout>

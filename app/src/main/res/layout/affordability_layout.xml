@@ -1,0 +1,137 @@
+<layout>
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="data"
+            type="com.cobi.puresurveyandroid.model.Affordability" />
+
+
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_10"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/keyBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="10dp"
+                android:text="Income Band: I) "></TextView>
+
+            <TextView
+                style="@style/valuePopup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{data.incomeBand}"></TextView>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/keyBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="10dp"
+                android:text="Investment Band (R): "></TextView>
+
+            <TextView
+                style="@style/valuePopup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{data.investmentBand}"></TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/keyBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="10dp"
+                android:text="GL lapse risk: "></TextView>
+
+            <TextView
+                style="@style/valuePopup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{data.glLapse}"></TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/keyBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="10dp"
+                android:text="MX lapse risk: "></TextView>
+
+            <TextView
+                style="@style/valuePopup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{data.mxLapse}"></TextView>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/valuePopup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="10dp"
+                android:text="Owns a property"
+                android:visibility="@{data.ownsProperty ? View.VISIBLE : View.GONE}"></TextView>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/valuePopup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="10dp"
+                android:text="Has a bond"
+                android:visibility="@{data.hasBond ? View.VISIBLE : View.GONE}"></TextView>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</layout>
+
+

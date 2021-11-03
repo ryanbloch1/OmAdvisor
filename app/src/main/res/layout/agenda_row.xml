@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:andoid="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="agendaData"
+            type="com.cobi.puresurveyandroid.model.Agenda" />
+
+        <variable
+            name="eventData"
+            type="com.cobi.puresurveyandroid.model.SingleEvent" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/ellipse" />
+
+            <TextView
+                style="@style/event_main_text"
+                android:id="@+id/left_border"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="@color/lightGrey" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/event_main_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="@dimen/margin_10"
+                        android:text="@{agendaData.startTime + ` - ` + agendaData.endTime}"
+                        tools:text="12:20 PM -  12:30 PM" />
+
+                    <TextView
+                        style="@style/event_main_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{agendaData.name}"
+                        android:textStyle="bold"
+                        tools:text="Presentation  Intro" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/extended_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/read_more"
+                        style="@style/event_main_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="5dp"
+                        android:text="@{agendaData.expanded ? `Read less` : `Read more`}"
+                        android:textColor="@color/skyBlue"
+                        tools:text="Read more" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:padding="5dp"
+                        android:src="@{agendaData.expanded ? @drawable/minus : @drawable/plus}"
+                        android:textSize="30sp"
+                        tools:src="@drawable/plus" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/detail_extension"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="10dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="20dp"
+                android:visibility="gone">
+
+                <TextView
+                    style="@style/event_main_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="15dp"
+                    android:text="@{agendaData.topics}"
+                    android:textSize="13sp"
+                    tools:text="Lorem ipsum dolor sit amet, consectetuer
+adipiscing elit. Aenean commodo ligula
+eget dolor. Aenean massa. Cum sociis
+natoque penatibus et magnis dis part." />
+
+                <Button
+                    android:id="@+id/rate_button"
+                    style="@style/MontserratRegular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@{agendaData.isStarted() &amp; eventData.isLive() || eventData.isEndedButActive() ? @drawable/events_button_background : @drawable/events_button_background_faded}"
+                    android:drawableLeft="@{agendaData.isStarted() &amp; eventData.isLive() || eventData.isEndedButActive() ? @drawable/tick : @drawable/faded_tick}"
+                    android:drawablePadding="@dimen/margin_6"
+                    android:padding="10dp"
+                    android:text="@string/rate_speaker"
+                    android:textColor="@{agendaData.isStarted() &amp; eventData.isLive() || eventData.isEndedButActive() ? @color/bottomNavigationSelected : @color/bottomNavigationSelectedFaded }" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_marginBottom="@dimen/margin_10"
+                android:background="@color/divider_colour" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

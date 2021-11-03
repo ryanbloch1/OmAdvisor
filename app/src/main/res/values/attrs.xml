@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ attrs.xml
+  ~ medscheme-android
+  ~
+  ~ Copyright (c) 2017 Medscheme. All rights reserved.
+  -->
+
+<resources>
+    <declare-styleable name="EditText">
+        <attr name="android:text"/>
+        <attr name="android:hint"/>
+        <attr name="android:inputType"/>
+<!--        <attr name="showBackground"/>-->
+        <attr name="enabled" format="boolean"/>
+        <attr name="errorEnabled" format="boolean"/>
+    </declare-styleable>
+    <declare-styleable name="PieChart">
+        <attr name="pie_progress" format="float"/>
+        <attr name="pie_max" format="integer"/>
+        <attr name="pie_empty_color" format="color"/>
+        <attr name="pie_end_color" format="color"/>
+        <attr name="pie_start_color" format="color"/>
+        <attr name="pie_finished_stroke_width" format="dimension"/>
+        <attr name="pie_unfinished_stroke_width" format="dimension"/>
+        <attr name="pie_background_color" format="color"/>
+        <attr name="pie_circle_starting_degree" format="integer"/>
+        <attr name="pie_inner_drawable" format="reference"/>
+    </declare-styleable>
+    <attr name="fadedButton" format="reference"/>
+    <attr name="normalButton" format="reference"/>
+</resources>

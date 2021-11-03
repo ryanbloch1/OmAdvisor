@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/margin_10">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingLeft="60dp"
+            android:paddingTop="20dp"
+            android:paddingRight="60dp"
+            android:paddingBottom="80dp">
+
+            <TextView
+                style="@style/cardTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:padding="7dp"
+                android:text="@string/email_confirm"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                style="@style/cardTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="7dp"
+                android:text="@string/please_confirm_email"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/email_field"
+                style="@style/cardTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/submit"
+        style="@style/accentTextButtonEvents"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableRight="@drawable/arrow_on_button"
+        android:text="Submit" />
+
+</LinearLayout>
+
+
+
+
+

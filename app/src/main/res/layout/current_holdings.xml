@@ -1,0 +1,146 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View" />
+
+
+        <variable
+            name="data"
+            type="com.cobi.puresurveyandroid.model.Holdings" />
+
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_10"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/keyBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="10dp"
+                android:text="OM customer since: "></TextView>
+
+            <TextView
+                style="@style/valuePopup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{data.omCustomerSince}"></TextView>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/keyBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="10dp"
+                android:text="Savings and Investments: "></TextView>
+
+            <TextView
+                style="@style/valuePopup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{data.savingsAndInvestment}"></TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/keyBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="10dp"
+                android:text="Life cover: "></TextView>
+
+            <TextView
+                style="@style/valuePopup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{data.lifeCover}"></TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/keyBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="10dp"
+                android:text="Funeral cover: "></TextView>
+
+            <TextView
+                style="@style/valuePopup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{data.funeralCover}"></TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/keyBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="10dp"
+                android:text="Disability cover: "></TextView>
+
+            <TextView
+                style="@style/valuePopup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{data.disabilityCover}"></TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/keyBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="10dp"
+                android:text="Illness or Trauma cover: "></TextView>
+
+            <TextView
+                style="@style/valuePopup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{data.illnessCover}"></TextView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>
+
+

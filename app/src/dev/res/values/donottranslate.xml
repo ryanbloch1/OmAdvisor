@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="base_url">459203af-f09c-4045-88fc-0c4329c3c100.mock.pstmn.io/</string>
+    <string name="base_url_path">omem/qa-ext/</string>
+    <string name="base_url_snap">api.android.test.ombb.co.za</string>
+    <string name="client_id">client_id</string>
+    <string name="base_url_events">oldmutual-test.survey.co.za/</string>
+    <string name="base_path_events">Events/</string>
+    <string name="client_secret">client_secret</string>
+    <string name="protocol">http://</string>
+</resources>

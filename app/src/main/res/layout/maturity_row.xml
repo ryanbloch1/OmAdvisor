@@ -1,0 +1,138 @@
+<layout>
+
+    <data>
+
+        <import type="android.text.TextUtils" />
+
+        <import type="android.text.Html" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="data"
+            type="com.cobi.puresurveyandroid.model.Maturity" />
+
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_10"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="@{TextUtils.isEmpty(data.productType) ? View.GONE : View.VISIBLE}">
+
+            <TextView
+                style="@style/keyBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="10dp"
+                android:text="Product Type: "></TextView>
+
+            <TextView
+                style="@style/valuePopup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{data.productType}"></TextView>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="@{TextUtils.isEmpty(data.maturityValue) ? View.GONE : View.VISIBLE}">
+
+            <TextView
+                style="@style/keyBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="10dp"
+                android:text="Maturity Value: "></TextView>
+
+            <TextView
+                style="@style/valuePopup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{data.maturityValue}"></TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="@{TextUtils.isEmpty(data.maturityDate) ? View.GONE : View.VISIBLE}">
+
+            <TextView
+                android:id="@+id/location"
+                style="@style/keyBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="10dp"
+                android:text="Maturity Date: "></TextView>
+
+            <TextView
+                style="@style/valuePopup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{data.maturityDate}"></TextView>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <TextView
+                style="@style/keyBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Likelihood to Retain RA: "></TextView>
+
+
+            <TextView
+                style="@style/valuePopup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{data.retainLikelyhood}"></TextView>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <TextView
+                style="@style/valuePopup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/maturities"></TextView>
+
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/divider_colour" />
+
+    </LinearLayout>
+
+</layout>
+
+

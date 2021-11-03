@@ -1,0 +1,589 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="MontserratLight" parent="android:TextAppearance">
+        <item name="android:fontFamily">@font/montserrat_light</item>
+    </style>
+
+    <style name="MontserratRegular" parent="android:TextAppearance">
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+    </style>
+
+
+    <style name="keyBold" parent="MontserratRegular">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">14dp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="SCBSwitch" parent="Theme.AppCompat.Light">
+        <!-- active thumb & track color (30% transparency) -->
+        <item name="colorControlActivated">#8dc63f</item>
+
+        <!-- inactive thumb color -->
+        <item name="colorSwitchThumbNormal">#f1f1f1
+        </item>
+
+        <!-- inactive track color (30% transparency) -->
+        <item name="android:colorForeground">#42221f1f
+        </item>
+    </style>
+
+    <style name="Tooltip2">
+        <item name="android:text">Hello World!</item>
+        <item name="android:textColor">?android:textColorPrimaryInverse</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:lineSpacingExtra">5dp</item>
+        <item name="backgroundColor">@color/colorPrimary</item>
+        <item name="cornerRadius">10dp</item>
+        <!--        <item name="arrowWidth">48dp</item>
+                <item name="arrowHeight">48dp</item>-->
+    </style>
+
+
+    <style name="valuePopup" parent="MontserratRegular">
+        <item name="android:textSize">14dp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+
+
+    <style name="MontserratMedium" parent="android:TextAppearance">
+        <item name="android:fontFamily">@font/montserrat_medium</item>
+    </style>
+
+    <style name="MontserratBold" parent="android:TextAppearance">
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:homeAsUpIndicator">@drawable/back</item>
+
+        <item name="android:statusBarColor" tools:targetApi="lollipop">@color/white</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+    </style>
+
+    <style name="NoActionbarTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:homeAsUpIndicator">@drawable/back</item>
+
+        <item name="android:statusBarColor" tools:targetApi="lollipop">@color/white</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+    </style>
+
+    <style name="progressBarStyle" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:minHeight">50dp</item>
+        <item name="android:minWidth">50dp</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="progressBarStyleNoPadding" parent="ThemeOverlay.AppCompat.Light">
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="onboardingImage">
+        <item name="android:layout_marginTop">@dimen/margin_20</item>
+        <item name="android:layout_marginLeft">@dimen/margin_23</item>
+        <item name="android:layout_marginStart" tools:targetApi="jelly_bean_mr1">@dimen/margin_23
+        </item>
+        <item name="android:layout_marginRight">@dimen/margin_23</item>
+        <item name="android:layout_marginEnd" tools:targetApi="jelly_bean_mr1">@dimen/margin_23
+        </item>
+        <item name="android:scaleType">fitCenter</item>
+    </style>
+
+    <!-- Onboarding Title -->
+    <style name="onboardingTitle" parent="MontserratMedium">
+        <item name="android:textColor">@color/textColour</item>
+        <item name="android:textSize">@dimen/text_size_30</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:capitalize">characters</item>
+        <item name="android:layout_marginTop">@dimen/margin_35</item>
+        <item name="android:textAlignment" tools:targetApi="jelly_bean_mr1">center</item>
+    </style>
+
+    <!-- Onboarding Description -->
+    <style name="onboardingDescription" parent="MontserratRegular">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">@dimen/text_size_18</item>
+        <item name="android:layout_marginTop">@dimen/margin_8</item>
+        <item name="android:layout_marginLeft">@dimen/margin_8</item>
+        <item name="android:layout_marginRight">@dimen/margin_8</item>
+        <item name="android:lineSpacingExtra">7dp</item>
+        <item name="android:textAlignment" tools:targetApi="jelly_bean_mr1">center</item>
+    </style>
+
+    <!-- Gradient Type Text Button -->
+    <style name="accentTextButton" parent="MontserratRegular">
+        <item name="android:width">@dimen/default_button_width</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/text_size_14</item>
+        <item name="android:layout_marginTop">@dimen/margin_15</item>
+        <item name="android:layout_marginBottom">@dimen/margin_15</item>
+        <item name="android:textAlignment" tools:targetApi="jelly_bean_mr1">center</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">@drawable/gradient_button_selector</item>
+    </style>
+
+
+    <!-- Gradient Type Text Button -->
+    <style name="overlaySubmitButton" parent="MontserratRegular">
+        <item name="android:width">@dimen/default_button_width</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/text_size_14</item>
+        <item name="android:textAlignment" tools:targetApi="jelly_bean_mr1">center</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">#157261</item>
+    </style>
+
+    <!-- Outline Type Text Button -->
+    <style name="outlineTextButton" parent="MontserratRegular">
+        <item name="android:width">@dimen/default_button_width</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textSize">@dimen/text_size_14</item>
+        <item name="android:layout_marginTop">@dimen/margin_15</item>
+        <item name="android:layout_marginBottom">@dimen/margin_15</item>
+        <item name="android:textAlignment" tools:targetApi="jelly_bean_mr1">center</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:background">@drawable/green_outline_button_background</item>
+    </style>
+
+    <!-- Outline Type Menu Text Button (Smaller) -->
+    <style name="outlineMenuTextButton" parent="MontserratRegular">
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textSize">@dimen/text_size_14</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:background">@drawable/green_outline_button_background</item>
+    </style>
+
+    <style name="salesFragmentTitle" parent="MontserratMedium">
+        <item name="android:textColor">@color/textColour</item>
+        <item name="android:textSize">@dimen/text_size_28</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginTop">@dimen/margin_10</item>
+    </style>
+
+    <style name="targetTitle" parent="MontserratLight">
+        <item name="android:textColor">@color/textColour</item>
+        <item name="android:textSize">@dimen/text_size_15</item>
+        <item name="android:layout_marginTop">@dimen/margin_6</item>
+    </style>
+
+    <style name="targetValue" parent="MontserratMedium">
+        <item name="android:textColor">@color/textColour</item>
+        <item name="android:textSize">@dimen/text_size_28</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="commissionMenuButton" parent="MontserratBold">
+        <item name="android:textColor">@color/colorLeads</item>
+        <item name="android:textSize">10dp</item>
+        <item name="android:drawablePadding">@dimen/padding_2</item>
+        <item name="android:textAlignment" tools:targetApi="jelly_bean_mr1">center</item>
+    </style>
+
+
+
+    <style name="graphDataDescription" parent="MontserratMedium">
+        <item name="android:textColor">@color/textColour</item>
+        <item name="android:textSize">@dimen/text_size_12</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="graphDataValue">
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textSize">@dimen/text_size_30</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="modalDescription" parent="MontserratLight">
+        <item name="android:textColor">@color/textColour</item>
+        <item name="android:textSize">@dimen/text_size_16</item>
+        <item name="android:textAlignment" tools:targetApi="jelly_bean_mr1">center</item>
+    </style>
+
+    <style name="modalInput" parent="MontserratRegular">
+        <item name="android:textColor">@color/textColour</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:inputType">number</item>
+    </style>
+
+    <style name="modalError" parent="MontserratRegular">
+        <item name="android:textColor">@color/colorError</item>
+        <item name="android:textSize">@dimen/text_size_10</item>
+    </style>
+
+    <style name="messageTitle" parent="MontserratMedium">
+        <item name="android:textSize">@dimen/text_size_17</item>
+        <item name="android:textColor">@color/textColour</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:letterSpacing" tools:targetApi="lollipop">0.0</item>
+        <item name="android:lineSpacingExtra">7sp</item>
+    </style>
+
+    <style name="messageSubject" parent="MontserratLight">
+        <item name="android:textSize">@dimen/text_size_12</item>
+        <item name="android:textColor">@color/textColour</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <!-- EditText Input Field -->
+    <style name="inputField" parent="MontserratLight">
+        <item name="android:textSize">@dimen/text_size_17</item>
+        <item name="android:textColor">@color/textColour</item>
+        <item name="android:letterSpacing" tools:ignore="NewApi">0.1</item>
+    </style>
+
+
+    <style name="inputFieldBorder" parent="MontserratRegular">
+        <item name="android:textSize">@dimen/text_size_16</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:padding">@dimen/padding_20</item>
+        <item name="android:layout_marginBottom">@dimen/padding_20</item>
+        <item name="android:background">@drawable/edit_text_background</item>
+    </style>
+
+
+
+    <!-- Black Info Label -->
+    <style name="blackInfoLabel" parent="MontserratLight">
+        <item name="android:textSize">@dimen/text_size_17</item>
+        <item name="android:textColor">@color/textColour</item>
+        <item name="android:letterSpacing" tools:ignore="NewApi">0.0</item>
+        <item name="android:lineSpacingExtra">7sp</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <!-- Card Title -->
+    <style name="cardTitle" parent="MontserratLight">
+        <item name="android:textSize">@dimen/text_size_13</item>
+        <item name="android:textColor">@color/textColour</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <!-- Card Text Label -->
+    <style name="cardLabel" parent="MontserratRegular">
+        <item name="android:textSize">@dimen/text_size_18</item>
+        <item name="android:textColor">@color/secondaryTextColour</item>
+    </style>
+
+    <!-- Card Value Label -->
+    <style name="cardValue" parent="MontserratRegular">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/textColour</item>
+    </style>
+
+    <!-- Input Field Hint -->
+    <style name="fieldHint" parent="MontserratRegular">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@color/secondaryTextColour</item>
+        <item name="android:letterSpacing" tools:targetApi="lollipop">0.03</item>
+        <item name="android:lineSpacingExtra">6sp</item>
+    </style>
+
+    <!-- Sales Screens Medium Titles -->
+    <style name="titleBlackMedium" parent="MontserratMedium">
+        <item name="android:textSize">@dimen/text_size_30</item>
+        <item name="android:textColor">@color/textColour</item>
+    </style>
+
+    <!-- Sales Screens Light Titles -->
+    <style name="titleBlackLight" parent="MontserratLight">
+        <item name="android:textSize">@dimen/text_size_30</item>
+        <item name="android:textColor">@color/textColour</item>
+    </style>
+
+    <!-- Sales Screens Banner Titles -->
+    <style name="subTitleWhite" parent="MontserratBold">
+        <item name="android:textSize">@dimen/text_size_14</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+
+    <!-- Sales Screens Banner Titles -->
+    <style name="subTitleWhiteUnboldLarge" parent="MontserratRegular">
+        <item name="android:textSize">@dimen/text_size_16</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingBottom">10dp</item>
+
+    </style>
+
+
+    <style name="subTitleWhiteSmall" parent="subTitleWhiteUnboldLarge">
+        <item name="android:textSize">@dimen/text_size_14</item>
+    </style>
+
+    <style name="listBold" parent="MontserratBold">
+        <item name="android:textSize">@dimen/text_size_13</item>
+        <item name="android:textColor">@color/secondaryTextColour</item>
+    </style>
+
+    <style name="listSmall" parent="MontserratRegular">
+        <item name="android:textSize">@dimen/text_size_13</item>
+        <item name="android:textColor">@color/secondaryTextColour</item>
+    </style>
+
+    <style name="listLargeInactive" parent="MontserratRegular">
+        <item name="android:textSize">@dimen/text_size_18</item>
+        <item name="android:textColor">@color/secondaryTextColour</item>
+    </style>
+
+    <style name="listLarge" parent="MontserratRegular">
+        <item name="android:textSize">@dimen/text_size_18</item>
+        <item name="android:textColor">@color/textColour</item>
+    </style>
+
+    <style name="menuItem" parent="MontserratRegular">
+        <item name="android:textSize">@dimen/text_size_16</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <!-- Inbox Title -->
+    <style name="inboxTitle" parent="MontserratLight">
+        <item name="android:textSize">@dimen/text_size_16</item>
+        <item name="android:textColor">@color/inbox_title</item>
+    </style>
+
+    <style name="inboxSubject" parent="MontserratLight">
+        <item name="android:textSize">@dimen/text_size_14</item>
+        <item name="android:textColor">@color/inbox_title</item>
+    </style>
+
+    <style name="inboxDate" parent="MontserratRegular">
+        <item name="android:textSize">@dimen/text_size_12</item>
+        <item name="android:textColor">@color/inbox_read_date</item>
+    </style>
+
+    <style name="inbox_message" parent="MontserratRegular">
+        <item name="android:textSize">@dimen/text_size_14</item>
+        <item name="android:textColor">@color/inbox_message</item>
+    </style>
+
+    <style name="accentWhite" parent="MontserratMedium">
+        <item name="android:textSize">@dimen/text_size_25</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:letterSpacing" tools:targetApi="lollipop">0.08</item>
+        <item name="android:lineSpacingExtra">21sp</item>
+    </style>
+
+    <style name="subTitleBlack" parent="MontserratLight">
+        <item name="android:textSize">@dimen/text_size_17</item>
+        <item name="android:textColor">@color/textColour</item>
+    </style>
+
+    <style name="greenCounterText" parent="MontserratMedium">
+        <item name="android:textSize">@dimen/text_size_15</item>
+        <item name="android:textColor">@color/limeGreen</item>
+    </style>
+
+    <style name="whiteCounterText" parent="MontserratMedium">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <!-- Dashboard Badge Counter -->
+    <style name="badgeCounter" parent="MontserratMedium">
+        <item name="android:textSize">@dimen/text_size_18</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <!-- Dashboard Title -->
+    <style name="dashboardTitle" parent="MontserratMedium">
+        <item name="android:textSize">@dimen/text_size_14</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:lines">2</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="labelDark">
+        <item name="android:textSize">13sp</item>
+        <item name="android:color">@color/black</item>
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+        <item name="android:paddingBottom">5dp</item>
+
+    </style>
+
+    <style name="bodyCopy">
+        <item name="android:textSize">16sp</item>
+        <item name="android:color">@color/graphiteBlack</item>
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+    </style>
+
+
+    <style name="bodyCopy2" parent="bodyCopy">
+        <item name="android:textSize">16sp</item>
+        <item name="android:color">@color/black</item>
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+    </style>
+
+    <style name="bodyTitle">
+        <item name="android:textSize">13sp</item>
+        <item name="android:fontFamily">Montserrat-Regular</item>
+        <item name="android:textColor">@color/graphiteBlack</item>
+        <item name="android:paddingBottom">5dp</item>
+    </style>
+
+    <style name="cardBlurb">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+        <item name="android:textColor">@color/mediumGrey</item>
+    </style>
+
+    <style name="tabs" parent="MontserratRegular">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+
+
+    <style name="buttonDark">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="navigationTitle">
+        <item name="android:textSize">17sp</item>
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="NoActionbarTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="NoActionbarTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="NoActionbarTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="topTitle" parent="MontserratBold">
+        <item name="android:textSize">26sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="sectionTitle" parent="MontserratBold">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+
+    <style name="sectionValue" parent="MontserratRegular">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="event_main_text" parent="MontserratRegular">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+
+    <style name="eventsButton" parent="MontserratRegular">
+        <item name="android:textColor">@color/bottomNavigationSelected</item>
+        <item name="android:padding">@dimen/padding_10</item>
+        <item name="android:background">@drawable/events_button_background</item>
+        <item name="android:drawablePadding">@dimen/padding_6</item>
+    </style>
+
+
+    <style name="formField" parent="MontserratRegular">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:padding">@dimen/padding_10</item>
+        <item name="android:layout_marginBottom">@dimen/margin_15</item>
+    </style>
+
+
+    <style name="formLabel" parent="MontserratBold">
+        <item name="android:textSize">14dp</item>
+        <item name="android:paddingBottom">3dp</item>
+    </style>
+
+
+    <style name="readMore" parent="eventsButton">
+        <item name="android:drawableEnd">@drawable/green_arrow</item>
+        <item name="android:paddingRight">5dp</item>
+    </style>
+
+    <style name="eventRateSessionButton" parent="eventsButton">
+        <item name="android:drawableLeft">@drawable/tick</item>
+    </style>
+
+
+    <style name="accentTextButtonEvents" parent="MontserratRegular">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/text_size_14</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">@drawable/gradient_button_selector</item>
+    </style>
+
+    <style name="accentTextButtonSubmit" parent="MontserratBold">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/text_size_14</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:drawableEnd">@drawable/white_arrow</item>
+        <item name="android:background">@drawable/gradient_button_selector</item>
+    </style>
+
+    <style name="likeReply" parent="MontserratRegular">
+        <item name="android:textColor">@color/skyBlue </item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="spinnerTextViewItem" parent="MontserratRegular">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/black </item>
+    </style>
+
+    <style name="DialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <!-- Customize your theme here. -->
+        <item name="android:windowBackground">@color/mediumGreyTrans</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+
+    <style name="DialogThemeNoMargins" parent="Theme.AppCompat.Light.Dialog">
+        <!-- Customize your theme here. -->
+        <item name="android:windowBackground">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">false</item>
+    </style>
+
+
+    <style name="BottomNavigationView">
+        <item name="itemTextAppearanceActive">@style/TextAppearance.BottomNavigationView.Active</item>
+        <item name="itemTextAppearanceInactive">@style/TextAppearance.BottomNavigationView.Inactive</item>
+    </style>
+
+    <!-- blank styles for better code readability-->
+    <style name="TextAppearance"/>
+    <style name="TextAppearance.BottomNavigationView"/>
+
+    <!-- inactive tab icon style -->
+    <style name="TextAppearance.BottomNavigationView.Inactive">
+        <item name="android:textSize">8sp</item>
+    </style>
+
+    <!-- active tab icon style -->
+    <style name="TextAppearance.BottomNavigationView.Active">
+        <item name="android:textSize">8sp</item>
+    </style>
+
+</resources>

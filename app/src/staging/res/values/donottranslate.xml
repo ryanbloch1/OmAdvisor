@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="base_url">apigwext.qas.oldmutual.co.za/</string>
+    <string name="base_url_snap">api.android.test.ombb.co.za</string>
+    <string name="base_url_path">omem/qa-ext/</string>
+    <string name="base_url_events">oldmutual-test.survey.co.za/</string>
+    <string name="base_path_events">EventsQA/</string>
+    <string name="client_id">693d154b-49bb-4d27-a55b-4aadf1f942a4</string>
+    <string name="client_secret">hV1rL7bY0sW8tI0fO4lO0fD7gI1lG5lQ5lA1nA3vK5wI8uR3xM</string>
+    <string name="base_url_plumline">api.plumbline.co.za/om/user</string>
+    <string name="base_url_imed">omimed-test.puresurvey.co.za/</string>
+    <string name="base_path_imed">Central/api/</string>
+    <string name="base_url_ping">sso.qa.oldmutual.co.za/</string>
+    <string name="ping_id">5c30ff80-56a5-48c6-b8ba-7ed433ea1870</string>
+    <string name="ping_secret">BIndycs5YBj2uJNGaH3zq2XZl7yfQAfEbCL4bFN68buMAedgKsyl5Nn6kbEqVDQg</string>
+    <string name="base_url_remotesales">test.oldmutualsales.co.za</string>
+    <string name="app_secret">MU0zZF9TeTVUM00tJHV0SFtMIXYzSzNZc10uNVlzVDNtOlchdGgrIUQ9NGEzYjY4YWEtMzUzZS00YjgwLTk5MTctOGNmOTI5YWFmZjU1</string>
+
+    <string name="client_id_resetcreds">693d154b-49bb-4d27-a55b-4aadf1f942a4</string>
+    <string name="client_secret_resetcreds">hV1rL7bY0sW8tI0fO4lO0fD7gI1lG5lQ5lA1nA3vK5wI8uR3xM</string>
+
+    <string name="client_id_omp">03244f36-86a8-4543-b619-06a600eac043</string>
+    <string name="client_secret_omp">P8jY2yO1aU7vE7lW4kN5jH2qM0gV4tU2iG5cN0rQ0tT3wJ0pT5</string>
+</resources>

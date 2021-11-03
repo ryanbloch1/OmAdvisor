@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="eventCount"
+            type="int" />
+
+        <variable
+            name="event"
+            type="com.cobi.puresurveyandroid.model.Event" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginBottom="25dp"
+                  android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/layoutCampaign"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="@dimen/margin_10"
+            android:layout_marginRight="@dimen/margin_10"
+            android:background="@{event.isLive() ? @drawable/rounded_green_background : @drawable/rounded_orange_background }"
+            android:padding="@dimen/padding_6"
+            tools:background="@drawable/rounded_orange_background">
+
+            <TextView
+                android:id="@+id/textViewNumber"
+                style="@style/whiteCounterText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="@{String.valueOf(eventCount)}"
+                android:textSize="25sp"
+                tools:text="4" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/heading_text"
+            style="@style/MontserratRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            tools:text="Upcoming Event(s)" />
+
+    </LinearLayout>
+
+</layout>

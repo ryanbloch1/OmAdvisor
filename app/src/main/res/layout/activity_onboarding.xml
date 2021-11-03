@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ activity_welcome.xml
+  ~ medscheme-android
+  ~
+  ~ Copyright (c) 2017 Medscheme. All rights reserved.
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:context=".activity.OnboardingActivity"
+        tools:openDrawer="right">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:fitsSystemWindows="true"
+            android:orientation="vertical"
+            tools:context=".activity.OnboardingActivity">
+
+            <include
+                android:id="@+id/include_toolbar"
+                layout="@layout/action_bar_logout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_50"
+                android:layout_marginLeft="@dimen/margin_50"
+                android:layout_marginTop="-4dp"
+                android:elevation="2dp"
+                android:src="@drawable/logo_top_nav"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.cobi.puresurveyandroid.view.NonSwipeableViewPager
+                android:id="@+id/view_pager"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                app:layout_constraintBottom_toTopOf="@id/indicator_container"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/include_toolbar" />
+
+            <FrameLayout
+                android:id="@+id/indicator_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_20"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <com.github.vivchar.viewpagerindicator.ViewPagerIndicator
+                    android:id="@+id/indicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    app:delimiterSize = "8dp"
+                    app:itemIcon = "@drawable/view_page_indicator"
+                    app:itemScale = "3"
+
+                    app:itemSelectedTint = "#009677"
+                    app:itemTint = "#e2e2e2"/>
+            </FrameLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- Navigation Drawer List -->
+        <include layout="@layout/content_navigation_list" />
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+</layout>

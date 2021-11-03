@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ widget_text_field.xml
+  ~ medscheme-android
+  ~
+  ~ Copyright (c) 2017 Medscheme. All rights reserved.
+  -->
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/hint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:passwordToggleTint="@color/black">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:fontFamily="sans-serif"
+            tools:hint="Hint" />
+
+        <TextView
+            android:id="@+id/error"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_text_field_error"
+            android:drawablePadding="@dimen/padding_5"
+            android:fontFamily="sans-serif"
+            android:textColor="@color/colorError"
+            android:textSize="13sp"
+            android:textStyle="normal"
+            tools:text="Error message" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+</merge>

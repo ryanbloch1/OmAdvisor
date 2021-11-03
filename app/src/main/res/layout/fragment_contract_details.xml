@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@drawable/layer6"
+            android:orientation="vertical"
+            android:paddingLeft="50dp"
+            android:paddingTop="20dp">
+
+            <TextView
+                android:id="@+id/text1"
+                style="@style/topTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Missed Premiums"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                style="@style/topTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Contract Details"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/product_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"></androidx.recyclerview.widget.RecyclerView>
+
+        <TextView
+            android:id="@+id/contact"
+            style="@style/accentTextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Contact Details"
+            android:drawableRight="@drawable/arrow_on_button" />
+    </LinearLayout>
+</layout>
+

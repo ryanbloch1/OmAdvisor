@@ -1,0 +1,279 @@
+repositories {
+    maven { url 'https://dl.google.com/' }
+    maven { url "https://jitpack.io" }
+    maven {
+        url "https://oss.sonatype.org/content/repositories/snapshots"
+    }
+}
+
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.firebase.firebase-perf'
+apply plugin: 'com.google.firebase.crashlytics'
+apply plugin: 'com.huawei.agconnect.apms'
+apply from: '../xmsadapter/scripts/productFlavor.gradle'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion '29.0.2'
+
+    defaultConfig {
+        project.ext.set("app_name", "IMED")
+        applicationId "com.oldmutual.imed"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 12
+        versionName '1.0.18'
+        testInstrumentationRunner "androidx.lotest.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+
+    }
+    lintOptions {
+
+        checkReleaseBuilds false
+
+    }
+
+    dataBinding {
+        enabled = true
+    }
+    // Signing configs
+    signingConfigs {
+        shared {
+            keyAlias 'Pure_Survey_Keystore'
+            keyPassword 'Puresurvey@!'
+            storeFile file('Pure_Survey_Keystore_Puresurvey@!.jks')
+            storePassword 'Puresurvey@!'
+        }
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            debuggable true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+            // Set some build config for this variant
+            buildConfigField("boolean", "DEV_BUILD", "true") // This indicates a non-release build
+
+            signingConfig signingConfigs.shared
+            matchingFallbacks = ['debug']
+
+            manifestPlaceholders = [analytics_deactivated: "true"]
+            //deactivates firebase analytics for debug builds
+        }
+        release {
+            minifyEnabled true
+            debuggable false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+            // Set some build config for this variant
+            buildConfigField("boolean", "DEV_BUILD", "false") // This indicates a release build
+
+            signingConfig signingConfigs.shared
+            matchingFallbacks = ['debug']
+
+            manifestPlaceholders = [analytics_deactivated: "false"]
+        }
+    }
+
+    // Output file renaming for generating signed APKs
+    applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            def fileName = project.ext.get("app_name") + "_" + variant.versionName + "_" + variant.name.capitalize() + ".apk"
+            outputFileName = fileName
+        }
+    }
+
+    flavorDimensions "core"
+    productFlavors {
+        live {
+            dimension "core"
+            buildConfigField("boolean", "IS_MOCK", "false")
+            buildConfigField("boolean", "IS_STAGING", "false")
+
+            testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+        }
+        staging {
+            dimension "core"
+            applicationIdSuffix '.staging'
+            buildConfigField("boolean", "IS_MOCK", "false")
+            buildConfigField("boolean", "IS_STAGING", "true")
+
+            testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+        }
+
+        QA {
+            dimension "core"
+            applicationIdSuffix '.staging'
+            buildConfigField("boolean", "IS_MOCK", "false")
+            buildConfigField("boolean", "IS_STAGING", "true")
+
+            testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+        }
+        dev {
+            dimension "core"
+            applicationIdSuffix '.staging'
+            buildConfigField("boolean", "IS_MOCK", "true")
+            buildConfigField("boolean", "IS_STAGING", "false")
+
+            testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+        }
+    }
+}
+
+dependencies {
+    implementation project(':xmsadapter')
+    implementation project(':xmsadapter:xmsaux')
+    compileOnly project(':xmsadapter:xmsaux:xapi')
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    testImplementation 'junit:junit:4.12'
+
+
+    implementation 'org.apache.commons:commons-lang3:3.6'
+
+    // Android stuffs
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel:2.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.browser:browser:1.2.0'
+    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'androidx.gridlayout:gridlayout:1.0.0'
+    implementation 'androidx.multidex:multidex:2.0.1'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.android.gms:play-services-maps:16.1.0'
+    implementation 'com.google.android:flexbox:1.1.0'
+
+    // Android Device Names
+    implementation 'com.jaredrummler:android-device-names:1.1.8'
+
+    // Android GIF Drawable -- NOTE: Leaving at 1.2.8 due to newer versions needing min SDK 17
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.8'
+
+    // ChatKit
+    implementation 'com.github.stfalcon:chatkit:0.3.3'
+
+    // Circle Image View
+    implementation 'de.hdodenhof:circleimageview:3.0.0'
+
+
+    // Eventbus
+    implementation 'org.greenrobot:eventbus:3.1.1'
+
+    // Firebase
+    implementation 'com.google.firebase:firebase-invites:17.0.0'
+    implementation 'com.google.firebase:firebase-messaging:20.2.3'
+    implementation 'com.google.android.gms:play-services-base:17.1.0'
+    implementation 'com.google.android.gms:play-services-gcm:17.0.0'
+    implementation 'com.google.android.gms:play-services-basement:17.1.0'
+    implementation 'com.huawei.hms:push:5.0.4.300'
+    implementation 'com.google.firebase:firebase-config:19.2.0'
+    implementation 'com.huawei.agconnect:agconnect-remoteconfig:1.4.0.300'
+    implementation 'com.huawei.hms:base:5.0.4.300'
+
+    implementation ("com.firebase:firebase-jobdispatcher-with-gcm-dep:0.6.0") {
+        exclude module: "play-services-gcm"
+    }
+
+
+    implementation 'com.google.firebase:firebase-perf:19.0.7'
+    implementation 'com.huawei.agconnect:agconnect-apms:1.3.1.300'
+    implementation 'com.google.firebase:firebase-crashlytics:17.1.1'
+    implementation 'com.huawei.agconnect:agconnect-crash:1.4.0.300'
+
+    // Glide
+    implementation 'com.github.bumptech.glide:glide:4.8.0'
+
+    // Google GSON parser
+    implementation 'com.google.code.gson:gson:2.8.5'
+
+    // Joda-Time
+    implementation 'joda-time:joda-time:2.10.2'
+
+    // Raizlabs DBFlow
+    annotationProcessor "com.github.Raizlabs.DBFlow:dbflow-processor:4.2.4"
+    implementation "com.github.Raizlabs.DBFlow:dbflow-core:4.2.4"
+    implementation "com.github.Raizlabs.DBFlow:dbflow:4.2.4"
+
+    // Retrofit -- NOTE: Leaving these versions as newer versions break SSL pinning!!
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.3.0'
+    implementation 'com.squareup.okhttp3:okhttp:3.4.1'
+
+    // Rich Path
+    implementation 'com.github.tarek360.RichPath:animator:0.1.1'
+
+    // Rounded Letter View -- NOTE: Leaving at 1.2 due to newer versions needing min SDK 19
+    implementation 'com.github.pavlospt:roundedletterview:1.2'
+
+    // Secure Preferences
+    implementation 'com.scottyab:secure-preferences-lib:0.1.7'
+
+    // Shortcut Badger
+    implementation 'me.leolin:ShortcutBadger:1.1.22@aar'
+
+    // View Pager Indicator
+    implementation 'com.github.vivchar:ViewPagerIndicator:1.1.0'
+
+    // ZXing
+    implementation 'com.google.zxing:core:3.3.3' // If min SDK is 19+ then this is not needed
+    implementation('com.journeyapps:zxing-android-embedded:3.6.0') { transitive = false }
+
+    //Rootbeer
+    implementation 'com.scottyab:rootbeer-lib:0.0.7'
+
+    //image slider
+    implementation 'com.github.smarteist:autoimageslider:1.3.2'
+
+    //back-port library for java.time api(Java 8)
+    implementation 'com.jakewharton.threetenabp:threetenabp:1.2.1'
+
+    //Pretty Time
+    implementation 'org.ocpsoft.prettytime:prettytime:4.0.1.Final'
+
+    //App Center
+    def appCenterSdkVersion = '3.3.0'
+    implementation "com.microsoft.appcenter:appcenter-analytics:${appCenterSdkVersion}"
+    implementation "com.microsoft.appcenter:appcenter-crashes:${appCenterSdkVersion}"
+    implementation "com.microsoft.appcenter:appcenter-distribute:${appCenterSdkVersion}"
+    // Picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    //SwipyRefreshLayout c
+    implementation 'com.github.orangegangsters:swipy:1.2.3@aar'
+
+    //tooltips
+    implementation 'com.github.douglasjunior:android-simple-tooltip:0.2.3'
+
+    //biometrics
+    implementation 'androidx.biometric:biometric:1.0.1'
+
+    implementation 'io.michaelrocks:libphonenumber-android:8.10.16'
+
+    def multidex_version = "2.0.1"
+    implementation "androidx.multidex:multidex:$multidex_version"
+
+    implementation 'com.elconfidencial.bubbleshowcase:bubbleshowcase:1.3.1'
+
+    implementation 'com.github.douglasjunior:android-simple-tooltip:0.2.2'
+
+
+    implementation 'com.huawei.hms:hianalytics:2.3.0.304'
+    implementation 'com.huawei.hms:base:3.0.3.300'
+    implementation ('com.huawei.hms:opendevice:3.0.3.301'){
+        exclude (group:'com.huawei.android.hms', module:'hmssdk-base')
+    }
+    implementation 'com.huawei.hms:push:5.0.2.300'
+    implementation 'com.huawei.hms:wireless:5.0.3.302'
+}
+
+apply plugin: 'com.google.gms.google-services'
+googleServices { disableVersionCheck = true }
+
+apply plugin: 'com.huawei.agconnect'

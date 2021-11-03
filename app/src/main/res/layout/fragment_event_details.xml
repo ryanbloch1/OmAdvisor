@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="data"
+            type="com.cobi.puresurveyandroid.model.SingleEvent" />
+
+        <variable
+            name="hasReadMore"
+            type="boolean" />
+
+        <variable
+            name="dateHelper"
+            type="com.cobi.puresurveyandroid.util.DateHelper" />
+
+    </data>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/swipe_container">
+
+    <androidx.core.widget.NestedScrollView
+                                           android:id="@+id/scroll_view"
+                                           android:layout_width="match_parent"
+                                           android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:background="@color/white"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <com.smarteist.autoimageslider.SliderView
+                    android:id="@+id/imageSlider"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    app:sliderAnimationDuration="600"
+                    app:sliderIndicatorAnimationDuration="600"
+                    app:sliderIndicatorGravity="center_horizontal|bottom"
+                    app:sliderIndicatorMargin="15dp"
+                    app:sliderIndicatorOrientation="horizontal"
+                    app:sliderIndicatorPadding="3dp"
+                    app:sliderIndicatorRadius="1dp"
+                    app:sliderIndicatorSelectedColor="#5A5A5A"
+                    app:sliderIndicatorUnselectedColor="#FFF"
+                    app:sliderScrollTimeInSec="1" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="15dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:orientation="vertical"
+                        android:paddingLeft="25dp">
+
+                        <TextView
+                            style="@style/MontserratRegular"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@{data.startDate}"
+                            app:month="@{data.startDate}"
+                            tools:text="June" />
+
+                        <TextView
+                            style="@style/MontserratRegular"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/margin_20"
+                            android:textStyle="bold"
+                            app:day="@{data.startDate}"
+                            tools:text="13" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/MontserratRegular"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="@dimen/margin_30"
+                            android:text="@{data.title}"
+                            tools:text="World Cup Games" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/read_more"
+                    style="@style/readMore"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_20"
+                    android:visibility="@{hasReadMore ? View.GONE : View.VISIBLE}"
+                    android:text="Read more" />
+
+                <LinearLayout
+                    android:id="@+id/extended_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="@{hasReadMore ? View.VISIBLE : View.GONE}">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/rate_button"
+                            style="@style/eventRateSessionButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="35dp"
+                            android:layout_marginBottom="20dp"
+                            android:text="@string/rate_event"
+                            android:visibility="@{data.checkedIn &amp; data.isLive() || data.isEndedButActive() ? View.VISIBLE : View.GONE}" />
+
+                        <com.google.android.material.tabs.TabLayout
+                            android:id="@+id/tabs"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.google.android.material.tabs.TabItem
+                                style="@style/tabs"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="Agenda" />
+
+                            <com.google.android.material.tabs.TabItem
+                                style="@style/tabs"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="live feed" />
+
+                        </com.google.android.material.tabs.TabLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/faded_border_height"
+                            android:layout_below="@+id/layoutCustomerRow"
+                            android:background="@drawable/custom_gradient" />
+
+                        <FrameLayout
+                            android:id="@+id/fragment_container_event_details"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/faded_border_height"
+                            android:layout_below="@+id/layoutCustomerRow"
+                            android:background="@drawable/custom_gradient" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/margin_12"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:textStyle="bold"
+                            style="@style/event_main_text"
+                            android:text="Times" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginLeft="@dimen/margin_12"
+                                    style="@style/event_main_text"
+                                    android:text="Event Starts" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    style="@style/event_main_text"
+                                    android:layout_marginLeft="@dimen/margin_12"
+                                    app:dateTime="@{data.startDate}" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginLeft="@dimen/margin_12"
+                                    style="@style/event_main_text"
+                                    android:text="Event Ends" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginLeft="@dimen/margin_12"
+                                    style="@style/event_main_text"
+                                    app:dateTime="@{data.endDate}" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/margin_12"
+                            android:layout_marginTop="30dp"
+                            android:textStyle="bold"
+                            style="@style/event_main_text"
+                            android:layout_marginBottom="5dp"
+                            android:text="Location" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/margin_12"
+                            android:paddingBottom="10dp"
+                            style="@style/event_main_text"
+                            android:text="@{data.location}" />
+
+                        <org.xms.g.maps.MapView
+                            android:id="@+id/map_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="250dp"
+                            android:layout_margin="10dp"></org.xms.g.maps.MapView>
+
+                        <Button
+                            android:id="@+id/add_toc"
+                            style="@style/MontserratRegular"
+                            android:layout_width="200dp"
+                            android:layout_height="40dp"
+                            android:layout_margin="5dp"
+                            android:layout_marginTop="@dimen/margin_10"
+                            android:background="@drawable/layer6"
+                            android:padding="10dp"
+                            android:text="Add to calender"
+                            android:textColor="@color/white"
+                            android:visibility="@{data.upcoming ? View.VISIBLE : View.GONE}"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</layout>

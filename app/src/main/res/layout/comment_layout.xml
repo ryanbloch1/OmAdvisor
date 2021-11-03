@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="data"
+            type="com.cobi.puresurveyandroid.model.EventMessage" />
+
+        <variable
+            name="likes"
+            type="Integer" />
+
+        <variable
+            name="initials"
+            type="String" />
+    </data>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  xmlns:tools="http://schemas.android.com/tools"
+                  android:orientation="vertical"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <RelativeLayout
+                android:id="@+id/circleImage"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="@dimen/margin_10"
+                android:layout_marginRight="@dimen/margin_10"
+                android:background="@drawable/rounded_background"
+                android:layout_marginTop="5dp"
+                tools:backgroundTint="@color/aqua"
+                android:padding="@dimen/padding_6">
+
+                <TextView
+                    android:id="@+id/textViewName"
+                    style="@style/whiteCounterText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@{data.isAnonymous ? `` : initials}"
+                    tools:text="RB" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/client_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    style="@style/event_main_text"
+                    android:text="@{data.isAnonymous ? `ANONYMOUS` : data.clientName}"
+                    tools:text=" Trever James"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/event_main_text"
+                    android:text="@{data.message}"
+                    tools:text=" Lorem ipsum dolor sit
+amet, consectetuer adipiscing elit.
+Aenean commodo ligula eget dolor. "/>
+
+                <ProgressBar
+                    android:id="@+id/progress"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:visibility="gone"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="15dp"/>
+
+                <ImageView
+                    android:id="@+id/comment_image"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="15dp"
+                    android:visibility="@{data.image !=null ? View.VISIBLE : View.GONE}" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/like"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:src="@drawable/liked"
+                        android:background="@{data.isLiked ?  @drawable/liked : @drawable/not_liked}" />
+
+
+                    <TextView
+                        android:id="@+id/no_of_likes"
+                        style="@style/likeReply"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        tools:text="4 Likes"
+                        android:text="@{likes > 0 ? String.valueOf(likes) + ` Likes` : ``}"
+                        android:layout_marginLeft="7dp" />
+
+                    <TextView
+                        android:id="@+id/time_sent"
+                        android:layout_marginLeft="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/wasSent"
+                        android:layout_width="match_parent"
+                        style="@style/event_main_text"
+                        android:textColor="@color/mediumGrey"
+                        android:layout_marginLeft="5dp"
+                        android:layout_height="wrap_content"
+                        tools:text="40 minutes ago"/>
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/layoutCustomerRow"
+                    android:layout_marginTop="@dimen/margin_20"
+                    android:layout_marginBottom="@dimen/margin_10"
+                    android:background="@color/divider_colour" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

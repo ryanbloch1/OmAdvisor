@@ -1,0 +1,295 @@
+<resources>
+    <string name="app_name">OM Adviser</string>
+    <string name="block_prompt">In order to access this app, please contact your manager for the necessary details.</string>
+    <string name="protocol_secure">https://</string>
+    <string name="protocol_unsecure">http://</string>
+    <string name="confirm_details_prompt">Please confirm your details</string>
+    <string name="first_name_prompt">First Name:</string>
+    <string name="surname_prompt">Surname:</string>
+    <string name="branch_prompt">Branch:</string>
+    <string name="confirm_button">CONFIRM</string>
+    <string name="help_center_prompt">Help Center</string>
+    <string name="details_incorrect_prompt">If your details are incorrect please contact us.</string>
+    <string name="email_button">EMAIL</string>
+    <string name="user_name_hint">User Name</string>
+    <string name="surname_hint">Surname</string>
+    <string name="password_hint">Password</string>
+    <string name="valid_staff_code_error">Valid Staff Code Required</string>
+    <string name="empty_username">Username Required</string>
+    <string name="empty_password">Password Required</string>
+    <string name="login_button">LOGIN</string>
+    <string name="date_header_today">Today</string>
+    <string name="date_header_yesterday">Yesterday</string>
+    <string name="message_input_prompt">Message</string>
+    <string name="error_dialog_title">Error</string>
+    <string name="ok_button_text">OK</string>
+    <string name="contact_prompt">Please contact our help centre</string>
+    <string name="contact_button_text">CONTACT</string>
+    <string name="txt_sending">Sending…</string>
+    <string name="logout">Logout</string>
+
+    <string name="oreq"><![CDATA[ <p><b>Outstanding Requirements<br>Outstanding documents required<b><p>]]></string>
+
+    <string name="owreq"><![CDATA[ <p><b>Outstanding Underwriting<br>Requirements<br><b><p>]]></string>
+
+
+
+
+    <string name="unable_to_connect">We were unable to complete your request\n\nPlease check your connection and try again.</string>
+    <string name="error_to_connect">Sorry, something went wrong."</string>
+    <string name="contact_email">support@puresurvey.co.za</string>
+    <string name="email_subject">SN@P APP query</string>
+    <string name="email_body">There seems to be an issue with my details on the SN@P APP</string>
+    <string name="send_mail_title">Send mail…</string>
+    <string name="no_email_clients_error">There are no email clients installed.</string>
+    <string name="proceed_to_login">PROCEED TO LOGIN</string>
+    <string name="my_commission">My Sales Earnings</string>
+    <string name="months_target">This Months Target</string>
+    <string name="leads">Leads</string>
+    <string name="pipeline">Pipeline</string>
+    <string name="missed_premiums">Missed Premiums</string>
+    <string name="help_4_u">Help4U</string>
+    <string name="current_commission">Current Sales Earnings</string>
+    <string name="shortfall">Shortfall</string>
+    <string name="commission_input_description">Please specify your monthly sales earnings target (up to %s)</string>
+    <string name="save_btn">Apply</string>
+    <string name="target_commission">Target Sales Earning</string>
+    <string name="previous_month_earnings">Previous month\'s sales earnings:\u0020</string>
+    <string name="input_error_validation">Min sales earning %1$s, Max %2$s</string>
+    <string name="invalid_number_exception">The number entered exceeds the maximum number input allowed</string>
+    <string name="retry_button">Retry</string>
+    <string name="device_not_supported">Sorry, your device does not support SN@P APP.</string>
+    <string name="button_cancel">Cancel</string>
+    <string name="error">Error</string>
+    <string name="try_again">Try Again</string>
+    <string name="no_options_available">Sorry, there are no options available.</string>
+    <string name="lead_actions">Please select whether you would like to Accept, Reject or Refer this lead to a colleague.\u0020</string>
+    <string name="lead_expires">This Hot Lead expires in\u0020 </string>
+
+    <string name="year_old">year old</string>
+    <string name="financialLifestage">Financial lifestage:\u0020</string>
+
+    <string name="comma">,\u0020</string>
+
+
+    <string name="zero">0</string>
+
+
+    financialLifestage
+
+    <string name="yes">yes</string>
+    <string name="no">no</string>
+
+    <string name="maturities">Only available for RA\'s with values over R250 000</string>
+
+
+    <string name="menu_commission">SALES EARNINGS</string>
+    <string name="menu_Birthdays">BIRTHDAYS</string>
+    <string name="menu_nps">NPS</string>
+    <string name="menu_my_customer">MY CUSTOMER</string>
+    <string name="menu_more">MORE</string>
+
+    <!-- Swipe menu options -->
+    <string name="menu_switch_user">SWITCH USER</string>
+    <string name="user_events">USER EVENTS</string>
+    <string name="menu_dashboard">DASHBOARD</string>
+    <string name="menu_logout">LOGOUT</string>
+
+    <!-- Events -->
+    <string name="events_title">Customer Life Events</string>
+    <string name="sms_button">SMS</string>
+    <string name="error_no_events">Sorry! None of your customers have a birthday in this month.</string>
+
+    <string name="placeholder_landline">Landline</string>
+    <string name="placeholder_mobile">Mobile</string>
+    <string name="placeholder_email">Email</string>
+    <string name="placeholder_birth_day">Birthday: %1$s %2$s</string>
+
+    <string name="placeholder_personalised_message">Send your client a personalised message</string>
+
+    <string name="placeholder_leads">My Leads</string>
+    <string name="placeholder_total_opportunities">TOTAL OPPORTUNITIES</string>
+    <string name="placeholder_leads_sub_title">LEADS BY CAMPAIGN</string>
+    <string name="placeholder_no_leads">No active campaigns</string>
+    <string name="placeholder_leads_login">Login to the CSI web portal for more details</string>
+
+    <string name="placeholder_lapses">My Lapses</string>
+    <string name="placeholder_pipeline">My Pipeline</string>
+    <string name="placeholder_no_content">WAITING ON CONTENT</string>
+    <string name="placeholder_help_prefix">HELP</string>
+    <string name="placeholder_help_suffix">4U</string>
+    <string name="help_4_customers_prefix">HELP</string>
+    <string name="help_4_customers_suffix">4CUSTOMERS</string>
+
+    <string name="placeholder_nps">NPS</string>
+    <string name="placeholder_coming_soon">COMING SOON</string>
+    <string name="title_activity_sales_codes">Sales Codes</string>
+
+    <string name="proposal_policy">Contract/Proposal Number:\u0020</string>
+    <string name="outstanding_req">Outstanding Requirements:\u0020</string>
+
+    <string name="leads_no">Number of leads:\u0020</string>
+    <string name="priority">Priority:\u0020</string>
+
+    <string name="contract_no">Contract Number:\u0020</string>
+    <string name="product">Product/Type:\u0020</string>
+    <string name="due_date">Due Date:\u0020</string>
+    <string name="potential_l">Potential Lapse/Cool-off Date:\u0020</string>
+    <string name="potential_clawback">Potential Clawback:\u0020</string>
+    <string name="total_value">Total value:\u0020</string>
+    <string name="ZAR">R</string>
+    <string name="NAD">N$</string>
+    <string name="sales_codes_title">Adviser Sales Codes</string>
+    <string name="sales_codes_title_sub">My Active Codes</string>
+    <string name="current_status_date">Current Status Date:</string>
+    <string name="not_available">Not available</string>
+    <string name="product_type">%1$s / %2$s</string>
+    <string name="no_intermediaries">No intermediaries found</string>
+    <string name="request_username">REQUEST USERNAME</string>
+    <string name="reset_password">RESET YOUR PASSWORD</string>
+    <string name="surname">Surname</string>
+    <string name="username">Username / User number</string>
+    <string name="request_username_button">SEND ME MY USERNAME</string>
+    <string name="reset_password_button">SEND ME MY TEMPORARY PASSWORD</string>
+    <string name="send_smstocell"> We’ll send your username via SMS to your cellphone.</string>
+    <string name="empty"></string>
+    <string name="request_username_blurb">We just need a few details to match you on our system</string>
+    <string name="reset_password_blurb">Please confirm your details, so we can reset your password and send a temporary one via SMS to the cellphone number registered to your profile. \n\nIf you haven’t linked your cellphone to your profile yet, we will email you your temporary password.</string>
+
+    <string name="no_sms"><![CDATA[ <p> <b>Didn\'t receive the SMS?<b>\nif you\'ve got cellphone network reception, but haven\'t received the SMS within 5 minutes. please contact the Seld Service Support Centre on 0860 60 65 00, Mon-Fri 8am-7prn. Sat 8am-1pm (call +27 21 503 1710 from outside South Africa). or help-secure@oldmutual.com<p>]]></string>
+
+    <string name="invalid_number">
+        <![CDATA[
+      <p><b>This is not a valid South African number.</b><br>Please check you\'ve typed it in correctly, or choose a different country code.<p>]]></string>
+
+    <string name="error_html">
+        <![CDATA[
+        <p>If you keep seeing this error message, please try again later, or contact the Self-Service Support Centre(Mon-Fri 0800-1900, Sat 0800-1300)<p>
+        <br>
+        <p><b>086 60 65 00</b>(within SA)<br><b>+27 21 503 1710</b>(international)<b><><p>]]></string>
+
+    <!-- OmEvents -->
+
+    <string name="events_images_url_path">http://www.omsurvey.co.za/Events/Uploads/</string>
+    <string name="rate_event">rate event</string>
+    <string name="rate_speaker">rate speaker</string>
+    <string name="stars_poor">1 star = Poor</string>
+    <string name="stars_excellent">5 stars = Excellent</string>
+    <string name="email_confirm">Email Confirmation</string>
+    <string name="please_confirm_email">Please confirm your email address</string>
+    <string name="log_a_call_html"><![CDATA[ <p>Or log a call on: <br><a href=\"http://servicedesk.na.omlac.net/portal\">http://servicedesk.na.omlac.net/portal</p>]]></string>
+
+
+
+    <string name="choose_spinner_option">-- Please Choose --</string>
+
+    <string name="date_placeholder">dd/mm/yyyy</string>
+
+    <string name="time_placeholder">hh:mm</string>
+
+    <string name="welcome">Welcome, </string>
+
+    <string name="large_text">
+        "Material is the metaphor.\n\n"
+
+        "A material metaphor is the unifying theory of a rationalized space and a system of motion."
+        "The material is grounded in tactile reality, inspired by the study of paper and ink, yet "
+        "technologically advanced and open to imagination and magic.\n"
+        "Surfaces and edges of the material provide visual cues that are grounded in reality. The "
+        "use of familiar tactile attributes helps users quickly understand affordances. Yet the "
+        "flexibility of the material creates new affordances that supercede those in the physical "
+        "world, without breaking the rules of physics.\n"
+        "The fundamentals of light, surface, and movement are key to conveying how objects move, "
+        "interact, and exist in space and in relation to each other. Realistic lighting shows "
+        "seams, divides space, and indicates moving parts.\n\n"
+
+        "Bold, graphic, intentional.\n\n"
+
+        "The foundational elements of print based design typography, grids, space, scale, color, "
+        "and use of imagery guide visual treatments. These elements do far more than please the "
+        "eye. They create hierarchy, meaning, and focus. Deliberate color choices, edge to edge "
+        "imagery, large scale typography, and intentional white space create a bold and graphic "
+        "interface that immerse the user in the experience.\n"
+        "An emphasis on user actions makes core functionality immediately apparent and provides "
+        "waypoints for the user.\n\n"
+
+        "Motion provides meaning.\n\n"
+
+        "Motion respects and reinforces the user as the prime mover. Primary user actions are "
+        "inflection points that initiate motion, transforming the whole design.\n"
+        "All action takes place in a single environment. Objects are presented to the user without "
+        "breaking the continuity of experience even as they transform and reorganize.\n"
+        "Motion is meaningful and appropriate, serving to focus attention and maintain continuity. "
+        "Feedback is subtle yet clear. Transitions are efﬁcient yet coherent.\n\n"
+
+        "3D world.\n\n"
+
+        "The material environment is a 3D space, which means all objects have x, y, and z "
+        "dimensions. The z-axis is perpendicularly aligned to the plane of the display, with the "
+        "positive z-axis extending towards the viewer. Every sheet of material occupies a single "
+        "position along the z-axis and has a standard 1dp thickness.\n"
+        "On the web, the z-axis is used for layering and not for perspective. The 3D world is "
+        "emulated by manipulating the y-axis.\n\n"
+
+        "Light and shadow.\n\n"
+
+        "Within the material environment, virtual lights illuminate the scene. Key lights create "
+        "directional shadows, while ambient light creates soft shadows from all angles.\n"
+        "Shadows in the material environment are cast by these two light sources. In Android "
+        "development, shadows occur when light sources are blocked by sheets of material at "
+        "various positions along the z-axis. On the web, shadows are depicted by manipulating the "
+        "y-axis only. The following example shows the card with a height of 6dp.\n\n"
+
+        "Resting elevation.\n\n"
+
+        "All material objects, regardless of size, have a resting elevation, or default elevation "
+        "that does not change. If an object changes elevation, it should return to its resting "
+        "elevation as soon as possible.\n\n"
+
+        "Component elevations.\n\n"
+
+        "The resting elevation for a component type is consistent across apps (e.g., FAB elevation "
+        "does not vary from 6dp in one app to 16dp in another app).\n"
+        "Components may have different resting elevations across platforms, depending on the depth "
+        "of the environment (e.g., TV has a greater depth than mobile or desktop).\n\n"
+
+        "Responsive elevation and dynamic elevation offsets.\n\n"
+
+        "Some component types have responsive elevation, meaning they change elevation in response "
+        "to user input (e.g., normal, focused, and pressed) or system events. These elevation "
+        "changes are consistently implemented using dynamic elevation offsets.\n"
+        "Dynamic elevation offsets are the goal elevation that a component moves towards, relative "
+        "to the component’s resting state. They ensure that elevation changes are consistent "
+        "across actions and component types. For example, all components that lift on press have "
+        "the same elevation change relative to their resting elevation.\n"
+        "Once the input event is completed or cancelled, the component will return to its resting "
+        "elevation.\n\n"
+
+        "Avoiding elevation interference.\n\n"
+
+        "Components with responsive elevations may encounter other components as they move between "
+        "their resting elevations and dynamic elevation offsets. Because material cannot pass "
+        "through other material, components avoid interfering with one another any number of ways, "
+        "whether on a per component basis or using the entire app layout.\n"
+        "On a component level, components can move or be removed before they cause interference. "
+        "For example, a floating action button (FAB) can disappear or move off screen before a "
+        "user picks up a card, or it can move if a snackbar appears.\n"
+        "On the layout level, design your app layout to minimize opportunities for interference. "
+        "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
+        "when a user tries to pick up one of cards.\n\n"
+    </string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_signup_activty">SignupActivty</string>
+    <string name="enable_me_to_contact_n_my_customer">Enable Me To Contact\n My Customer</string>
+    <string name="please_call_me">Please call me</string>
+    <string name="its_my_birthday">It’s my Birthday</string>
+    <string name="help_conclude_my_need">Help conclude my need</string>
+    <string name="customer_needs_to_attend_to">Customer \nNEEDS to \nattend to</string>
+    <string name="oops_missed_my_premium">Oops missed my premium</string>
+    <string name="terms_url">https://puresurvey-953be.firebaseapp.com/terms.html</string>
+    <string name="help_title">HELP4U</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="base_url">apigwext.qas.oldmutual.co.za/</string>
+    <string name="base_url_snap">api.android.test.ombb.co.za</string>
+    <string name="base_url_path">omem/qa-ext/</string>
+    <string name="base_url_events">oldmutual-test.survey.co.za/</string>
+    <string name="base_path_events">EventsQA/</string>
+    <string name="client_id">client_id_qa</string>
+    <string name="client_secret">client_secret_qa</string>
+    <string name="base_url_plumline">api.plumbline.co.za/om/user</string>
+    <string name="base_url_imed">omimed-qa.puresurvey.co.za/</string>
+    <string name="base_path_imed">Central/api/</string>
+    <string name="base_url_remotesales">qa.oldmutualsales.co.za</string>
+    <string name="app_secret">MU0zZF9TeTVUM00tJHV0SC41WXNUM206VyF0aCshRD1jNmE3YzM0Ni1kYjM3LTRkZWMtYjQ4NS1mZmYwOWUyOGZjMDM=</string>
+
+</resources>

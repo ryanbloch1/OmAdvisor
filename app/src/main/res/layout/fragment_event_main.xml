@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="data"
+            type="com.cobi.puresurveyandroid.model.SingleEvent" />
+
+
+        <variable
+            name="dateHelper"
+            type="com.cobi.puresurveyandroid.util.DateHelper" />
+    </data>
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@{data.isLive() ? @drawable/event_banner_live : @drawable/empty_background}"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="20dp">
+
+                <TextView
+                    style="@style/event_main_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingRight="5dp"
+                    android:text="@{data.title}"
+                    android:textColor="@{data.isLive() ? @color/white : @color/black}"
+                    android:textStyle="bold"
+                    tools:text="World Cup Games" />
+
+                <TextView
+                    android:id="@+id/topText"
+                    style="@style/event_main_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@{data.isLive() ? @color/white : @color/black}"
+                    android:textStyle="bold"
+                    tools:text="Live" />
+
+                <TextView
+                    android:id="@+id/notCheckedIn"
+                    style="@style/event_main_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:text="@{data.checkedIn ? `` : `Not Checked-in`}"
+                    android:textColor="@{data.isLive() ? @color/white : @color/black}"
+                    android:textStyle="bold"
+                    android:visibility="@{data != null ? View.VISIBLE : View.GONE}"
+                    tools:text="Checked in" />
+
+            </LinearLayout>
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/events_tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.tabs.TabItem
+                    style="@style/tabs"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Details" />
+
+                <com.google.android.material.tabs.TabItem
+                    style="@style/tabs"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Gallery" />
+
+            </com.google.android.material.tabs.TabLayout>
+
+            <FrameLayout
+                android:id="@+id/fragment_container_single_event"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/check_in"
+                style="@style/accentTextButtonEvents"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/arrow_on_button"
+                android:visibility="@{data.isLive() || data.isUpcoming &amp; !data.isPassed() &amp; !data.hasCheckedOut ? View.VISIBLE : View.GONE}"
+                app:eventMainButton="@{data}" />
+
+        </LinearLayout>
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/progress_event_main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:src="@drawable/loading"
+            android:visibility="gone"
+            tools:visibility="gone" />
+
+    </RelativeLayout>
+
+
+</layout>

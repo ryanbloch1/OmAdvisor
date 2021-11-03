@@ -1,0 +1,99 @@
+{
+  "project_info": {
+    "project_number": "523213081402",
+    "firebase_url": "https://om-imed.firebaseio.com",
+    "project_id": "om-imed",
+    "storage_bucket": "om-imed.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:523213081402:android:f6fa9727ea8c9424",
+        "android_client_info": {
+          "package_name": "com.oldmutual.imed"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "523213081402-t5lbibjj2and53u3biqbsqrq52lc3loj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.oldmutual.imed",
+            "certificate_hash": "357cda050d3aa622350c10643d4286e4b492cdc4"
+          }
+        },
+        {
+          "client_id": "523213081402-m741h4qef1e6s2uai37kknl6f7c6jsr3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBEbPyDU0rw15e8GxF58UX7a4D3Ww5tCU8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "523213081402-m741h4qef1e6s2uai37kknl6f7c6jsr3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "523213081402-6vndh1o65q8ng0g60h1e5rm016gcv6op.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.oldmutual.imed.staging"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:523213081402:android:569069b71299209a",
+        "android_client_info": {
+          "package_name": "com.oldmutual.imed.staging"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "523213081402-9ce0ob64u256pfgnj4psjtseetolpd3a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.oldmutual.imed.staging",
+            "certificate_hash": "357cda050d3aa622350c10643d4286e4b492cdc4"
+          }
+        },
+        {
+          "client_id": "523213081402-m741h4qef1e6s2uai37kknl6f7c6jsr3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBEbPyDU0rw15e8GxF58UX7a4D3Ww5tCU8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "523213081402-m741h4qef1e6s2uai37kknl6f7c6jsr3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "523213081402-6vndh1o65q8ng0g60h1e5rm016gcv6op.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.oldmutual.imed.staging"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
